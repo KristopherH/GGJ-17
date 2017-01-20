@@ -17,22 +17,17 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		grounded = gameObject.GetComponentInChildren<EnemyTriggerCollider>().grounded;
 		if (grounded){
 			transform.position+=(moveDirection*speed);
 		}
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "Platform" ||
-			other.gameObject.tag == "UpperPlatform"){
-			grounded = true;
-		}
-	}
-
-	void OnTriggerExit(Collider other){
-		if (other.gameObject.tag == "Platform"){
-			//grounded = false;
+		if (other.gameObject.tag == "PlatformLimit"){
+			Debug.Log("LIMIT");
 			moveDirection = -moveDirection;
 		}
 	}
+
 }
