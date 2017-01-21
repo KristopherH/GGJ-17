@@ -14,9 +14,9 @@ public class Killzone : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.tag == "Player"){
+		if (other.name == "Player_Master"){
 			other.gameObject.GetComponent<PlayerHealth>().respawn();
-		} else {
+		} else if(other.tag == "Enemy"){
 			Destroy(other.gameObject);
 		}
 	}
