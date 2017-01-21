@@ -9,7 +9,7 @@ public class Player_Controller : MonoBehaviour {
         FACING_RIGHT,
         FACING_FORWARD
     };
-    enum player_standing_state
+    public enum player_standing_state
     {
         STANDING_UP,
         LAYING_DOWN
@@ -20,7 +20,7 @@ public class Player_Controller : MonoBehaviour {
 
     private Animator player_ani;
     private player_state ps;
-    private player_standing_state p_standing_state;
+    public player_standing_state p_standing_state;
     private bool can_animate;
     private float ani_run_time = 0.3f;
 
