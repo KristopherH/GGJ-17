@@ -69,13 +69,14 @@ public class PlayerAttack : MonoBehaviour {
 				break;
 			case 2:
 				//GetComponent<PlayerHealth>().respawn();
-				GetComponent<PlayerHealth>().lives = 0;
+				//GetComponent<PlayerHealth>().lives = 0;
 				break;
 			}
 			Destroy(enemy);
 			break;
 		case STATE.COOKING:
-			GetComponent<PlayerHealth>().respawn();
+			//GetComponent<PlayerHealth>().respawn();
+			GetComponent<PlayerHealth>().lives = 0;
 			playerState = STATE.OPEN;
 			break;
 		case STATE.INVINCIBLE:
