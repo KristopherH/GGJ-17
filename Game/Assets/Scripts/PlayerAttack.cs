@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour {
 
 	[SerializeField] int collectedEnemyType;
 	[SerializeField] int timer;
+	bool scored = true;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,10 @@ public class PlayerAttack : MonoBehaviour {
 		}
 		if (GetComponent<playerTimer>().cTimer <= 0){
 			playerState = STATE.OPEN;
+			if (!scored){
+				scored = true;
+				GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
+			}
 		}
 	}
 
@@ -43,9 +48,11 @@ public class PlayerAttack : MonoBehaviour {
 			switch(collectedEnemyType){
 			case 0:
 				GetComponent<playerTimer>().setCookingTimer(3.0f);
+				scored = false;
 				break;
 			case 1:
 				GetComponent<playerTimer>().setCookingTimer(6.0f);
+				scored = false;
 				break;
 			case 2:
 				GetComponent<PlayerHealth>().respawn();
