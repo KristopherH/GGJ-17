@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
@@ -42,5 +43,9 @@ public class MainMenu : MonoBehaviour {
         clicked = true;
         randomNum = Random.Range(0, 5);
 
+    }
+    public void ChangetoScene (int changeScene)
+    {
+        SceneManager.LoadScene(changeScene);
     }
 }
