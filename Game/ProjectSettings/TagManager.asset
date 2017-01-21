@@ -8,6 +8,7 @@ TagManager:
   - Lava
   - PlatformLimit
   - Enemy
+  - DoorActive
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Door
   - 
   - 
   - 
@@ -39,7 +40,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Platform
   - 
   m_SortingLayers:
   - name: Default

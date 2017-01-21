@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3335604}
   - 65: {fileID: 6549600}
   - 23: {fileID: 2364722}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: Platform_Gualt
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 446164}
   - 65: {fileID: 6512390}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: LimitRight
   m_TagString: PlatformLimit
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 455334}
   - 65: {fileID: 6557806}
-  m_Layer: 0
+  m_Layer: 30
   m_Name: LimitLeft
   m_TagString: PlatformLimit
   m_Icon: {fileID: 0}

@@ -14,7 +14,7 @@ GameObject:
   - 95: {fileID: 9530574}
   - 114: {fileID: 11499874}
   - 54: {fileID: 5426754}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: DoorHinge
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   - 33: {fileID: 3350002}
   - 65: {fileID: 6527050}
   - 23: {fileID: 2363938}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,6 +86,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473324}
   - 65: {fileID: 6594614}
+  - 114: {fileID: 11488228}
   m_Layer: 8
   m_Name: PlayerNEW
   m_TagString: Player
@@ -299,7 +300,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
@@ -314,7 +315,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
@@ -329,7 +330,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 72
@@ -411,6 +412,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11488228
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e603cc0618f294ad4b70c67fc39ad6a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parts:
+  - {fileID: 140340}
+  - {fileID: 162600}
+  - {fileID: 118204}
 --- !u!114 &11499874
 MonoBehaviour:
   m_ObjectHideFlags: 1

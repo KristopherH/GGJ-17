@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
-
+	public float activeDoorAttackTime;
+	private float doorTimer;
 	enum STATE{
 		COOKING,
 		OPEN,
@@ -14,11 +15,13 @@ public class PlayerAttack : MonoBehaviour {
 	[SerializeField] int collectedEnemyType;
 	[SerializeField] int timer;
 	bool scored = true;
+	GameObject door;
 
 	// Use this for initialization
 	void Start () {
 		playerState = STATE.OPEN;
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+		door = GameObject.Find ("Door");
 	}
 	
 	// Update is called once per frame
@@ -32,8 +35,22 @@ public class PlayerAttack : MonoBehaviour {
 				scored = true;
 				GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 				GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+				doorTimer = activeDoorAttackTime;
+				door.tag = "DoorActive";
+				StartCoroutine ("DoorAttackTimer");
 			}
 		}
+	}
+
+	IEnumerable DoorAttackTimer(){
+		if (doorTimer > 0.0f) {
+			doorTimer -= Time.deltaTime;
+			if (doorTimer <= 0.0f) 
+			{
+				door.tag = "Player";
+			}
+		}			
+		yield return null;
 	}
 
 	void OnCollisionEnter (Collision collision){
@@ -71,5 +88,10 @@ public class PlayerAttack : MonoBehaviour {
 			Destroy(enemy);
 			break;
 		}
+	}
+
+	public float GetAttackPower()
+	{
+		return doorTimer;
 	}
 }

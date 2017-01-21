@@ -28,6 +28,14 @@ public class EnemyController : MonoBehaviour {
 			//Debug.Log("LIMIT");
 			moveDirection = -moveDirection;
 		}
+		if (other.tag == "DoorActive") {
+			GetHit ();
+		}
+	}
+
+	void GetHit()
+	{
+		Debug.Log ("Enemy hit");
 	}
 
 }

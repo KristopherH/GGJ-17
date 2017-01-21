@@ -12,7 +12,7 @@ GameObject:
   - 65: {fileID: 6554778}
   - 65: {fileID: 6522540}
   - 23: {fileID: 2349820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 4: {fileID: 465304}
   - 95: {fileID: 9542176}
   - 114: {fileID: 11473288}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Master
   m_TagString: Untagged
   m_Icon: {fileID: 0}
