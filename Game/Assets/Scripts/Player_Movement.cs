@@ -61,7 +61,8 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            mover.transform.Translate(speed * Time.deltaTime, 0, 0);
+			mover.GetComponent<Rigidbody>().AddForce(new Vector3(0, 30 * speed, 0));
+			//mover.transform.Translate(0, speed * Time.deltaTime, 0);
         }
 
         if (move_left)

@@ -20,17 +20,6 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter (Collision collision){
-		if (collision.gameObject.tag == "Enemy"){
-			if(invincibility <= 0){
-				Destroy(collision.gameObject);
-				respawn();
-			} else {
-				Destroy(collision.gameObject);
-			}
-		}
-	}
-
 	public void respawn(){
 		if(invincibility <= 0){
 			lives = lives-1;
