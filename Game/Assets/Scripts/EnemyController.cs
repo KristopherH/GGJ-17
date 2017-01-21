@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 0.05f;
+		speed = Random.Range(0.03f, 0.08f);
 	}
 	
 	// Update is called once per frame

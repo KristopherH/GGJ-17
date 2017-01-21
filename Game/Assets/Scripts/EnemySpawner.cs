@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	public void Spawn(){
 		//SpawnEnemy
-		int type = (int)Random.Range(0, 3/*add number of enemy types*/);
+		int type = (int)Random.Range(0, 2/*add number of enemy types*/);
 		GameObject newEnemy;
 		switch(type){
 		case 0:
