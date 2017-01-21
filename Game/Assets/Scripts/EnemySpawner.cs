@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		spawnTimer = 50;
+		enemies = new ArrayList();
 	}
 	
 	// Update is called once per frame
@@ -32,7 +33,12 @@ public class EnemySpawner : MonoBehaviour {
 	public void Spawn(){
 		//SpawnEnemy
 		GameObject newEnemy = Instantiate(enemyPrefab);
-		newEnemy.GetComponent<EnemyController>().moveDirection = enemyDirection;
+		int dice = (int) Random.Range(0, 100);
+		if ( dice < 50){
+			newEnemy.GetComponent<EnemyController>().moveDirection = enemyDirection;
+		} else {
+			newEnemy.GetComponent<EnemyController>().moveDirection = -enemyDirection;
+		}
 		newEnemy.GetComponent<EnemyController>().type = (int)Random.Range(0, 3/*add number of enemy types*/);
 		newEnemy.transform.position = this.transform.position;
 		enemyDirectionAtSpawn.Normalize();
