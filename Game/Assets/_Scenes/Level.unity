@@ -2008,6 +2008,18 @@ MonoBehaviour:
   cookingTimerText: {fileID: 439581055}
   cTimer: 0
   enemyType: 0
+--- !u!65 &1337829560
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337829552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1356785931 stripped
 Transform:
   m_PrefabParentObject: {fileID: 492598, guid: 27a255eb3842f4c68aa325ffb19bed28, type: 2}
@@ -2226,7 +2238,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6522540, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
       propertyPath: m_Center.y
-      value: 0.067480564
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
       propertyPath: m_Size.x
@@ -2248,7 +2260,8 @@ Prefab:
       propertyPath: m_Center.y
       value: 0.027077675
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1573521350 stripped

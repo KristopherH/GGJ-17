@@ -41,23 +41,11 @@ public class PlayerAttack : MonoBehaviour {
 
 				if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
 					GetComponent<Rigidbody>().AddForce(0, 500, 0);
-                    //Kris call from here
                     GetComponent<Player_Controller>().FaceUp();
 				}
 			}
 		}
-
-        Jump();
 	}
-
-    void Jump()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-
-            GetComponent<Rigidbody>().AddForce(0, 500, 0);
-        }
-    }
 
 	IEnumerable DoorAttackTimer(){
 		if (doorTimer > 0.0f) {

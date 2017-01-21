@@ -148,7 +148,7 @@ public class Player_Controller : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space) && player_grounded)
         {
-            GetComponent<Rigidbody>().AddForce(0, 250, 0);
+            GetComponent<Rigidbody>().AddForce(0, 150, 0);
         }
     }
 
