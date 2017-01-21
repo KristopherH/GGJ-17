@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "PlatformLimit"){
-			Debug.Log("LIMIT");
+			//Debug.Log("LIMIT");
 			moveDirection = -moveDirection;
 		}
 	}

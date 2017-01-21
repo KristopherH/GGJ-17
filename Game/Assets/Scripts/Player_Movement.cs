@@ -61,7 +61,11 @@ public class Player_Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-			mover.GetComponent<Rigidbody>().AddForce(new Vector3(0, 30 * speed, 0));
+			if (flipped_left || flipped_right){
+				mover.GetComponent<Rigidbody>().AddForce(new Vector3(0, 50 * speed, 0));
+			} else {
+				mover.GetComponent<Rigidbody>().AddForce(new Vector3(0, 30 * speed, 0));
+			}
 			//mover.transform.Translate(0, speed * Time.deltaTime, 0);
         }
 
@@ -90,7 +94,7 @@ public class Player_Movement : MonoBehaviour
                 flipped_left = true;
                 player_animator.Play("Flip_Left");
             }
-            Debug.Log("Tried to run Flip_Left");
+            //Debug.Log("Tried to run Flip_Left");
         }
 
         if (Input.GetKeyDown(KeyCode.E) && !flipped_right)
@@ -106,7 +110,7 @@ public class Player_Movement : MonoBehaviour
                 flipped_right = true;
                 player_animator.Play("Flip_Right");
             }
-            Debug.Log("Tried to run Flip_Right");
+            //Debug.Log("Tried to run Flip_Right");
         }
         
     }
