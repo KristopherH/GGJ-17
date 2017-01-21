@@ -26,24 +26,11 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GetComponent<PlayerHealth>().invincibility > 0){
-			playerState = STATE.INVINCIBLE;
-		}
 		if (GetComponent<playerTimer>().cTimer <= 0){
 			playerState = STATE.OPEN;
 			if (!scored){
+				SuccessfulCook();
 				scored = true;
-				GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
-				GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
-//				doorTimer = activeDoorAttackTime;
-//				door.tag = "DoorActive";
-//				StartCoroutine ("DoorAttackTimer");
-				Shoot();
-
-				if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
-					GetComponent<Rigidbody>().AddForce(new Vector3(0, 600, 0));
-                    GetComponent<Player_Controller>().FaceUp();
-				}
 			}
 		}
 	}
@@ -88,7 +75,7 @@ public class PlayerAttack : MonoBehaviour {
 			break;
 		case STATE.COOKING:
 			GetComponent<PlayerHealth>().respawn();
-			playerState = STATE.INVINCIBLE;
+			playerState = STATE.OPEN;
 			break;
 		case STATE.INVINCIBLE:
 			Destroy(enemy);
@@ -103,5 +90,19 @@ public class PlayerAttack : MonoBehaviour {
 
 	void Shoot(){
 
+	}
+
+	void SuccessfulCook(){
+		GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
+		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+		//				doorTimer = activeDoorAttackTime;
+		//				door.tag = "DoorActive";
+		//				StartCoroutine ("DoorAttackTimer");
+		Shoot();
+
+		if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
+			GetComponent<Rigidbody>().AddForce(new Vector3(0, 600, 0));
+			GetComponent<Player_Controller>().FaceUp();
+		}
 	}
 }
