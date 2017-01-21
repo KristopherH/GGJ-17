@@ -49,7 +49,7 @@ public class Player_Controller : MonoBehaviour {
         {
             if(ani_run_time <= 0)
             {
-                ani_run_time = 0.5f;
+                ani_run_time = 0.3f;
                 can_animate = true;
             }
             else
@@ -148,7 +148,7 @@ public class Player_Controller : MonoBehaviour {
 
         if ((Input.GetKey(KeyCode.Space) || Input.GetAxis("A/X") == 1) && player_grounded)
         {
-            GetComponent<Rigidbody>().AddForce(0, 150, 0);
+            GetComponent<Rigidbody>().AddForce(0, 100, 0);
         }
     }
 
