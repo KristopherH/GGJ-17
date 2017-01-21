@@ -41,7 +41,7 @@ public class PlayerAttack : MonoBehaviour {
 				Shoot();
 
 				if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
-					GetComponent<Rigidbody>().AddForce(0, 500, 0);
+					GetComponent<Rigidbody>().AddForce(new Vector3(0, 600, 0));
                     GetComponent<Player_Controller>().FaceUp();
 				}
 			}

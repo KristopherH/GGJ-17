@@ -148,7 +148,7 @@ public class Player_Controller : MonoBehaviour {
 
         if ((Input.GetKey(KeyCode.Space) || Input.GetAxis("A/X") == 1) && player_grounded)
         {
-            GetComponent<Rigidbody>().AddForce(0, 80, 0);
+			GetComponent<Rigidbody>().AddForce(new Vector3(0, 150, 0));
 
             //this.transform.Translate(this.transform.position + new Vector3(0, 1, 0));
         }
