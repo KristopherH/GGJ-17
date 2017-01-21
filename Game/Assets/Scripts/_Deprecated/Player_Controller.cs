@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player_Controller : MonoBehaviour {
 
-    enum player_state
+    public enum player_state
     {
         FACING_LEFT,
         FACING_RIGHT,
@@ -19,10 +19,10 @@ public class Player_Controller : MonoBehaviour {
     public bool player_grounded;
 
     private Animator player_ani;
-    private player_state ps;
+    public player_state ps;
     public player_standing_state p_standing_state;
-    private bool can_animate;
-    private float ani_run_time = 0.3f;
+    public bool can_animate;
+    public float ani_run_time = 0.3f;
 
     [SerializeField]
     GameObject player;
