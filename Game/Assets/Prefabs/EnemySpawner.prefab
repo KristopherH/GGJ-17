@@ -105,7 +105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawningActive: 0
-  enemyPrefab: {fileID: 117578, guid: 9be6bbceb3b274ad0b1a216f1e51cab7, type: 2}
+  enemyPrefab1: {fileID: 104646, guid: 2351bd0fdc9ca4b4cb2cc7e4216a986c, type: 2}
+  enemyPrefab2: {fileID: 0}
+  enemyPrefab3: {fileID: 0}
   spawnTimer: 0
   timeBetweenSpawns: 30
   enemyDirectionAtSpawn: {x: 0, y: 0, z: 0}
