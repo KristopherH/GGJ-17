@@ -24,9 +24,7 @@ public class PlayerAttack : MonoBehaviour {
 		if (GetComponent<PlayerHealth>().invincibility > 0){
 			playerState = STATE.INVINCIBLE;
 		}
-		if (playerState == STATE.COOKING && timer > 0){
-			timer--;
-		} else if (timer == 0){
+		if (GetComponent<playerTimer>().cTimer <= 0){
 			playerState = STATE.OPEN;
 		}
 	}
@@ -44,15 +42,16 @@ public class PlayerAttack : MonoBehaviour {
 			playerState = STATE.COOKING;
 			switch(collectedEnemyType){
 			case 0:
-				timer = 100;
+				GetComponent<playerTimer>().setCookingTimer(3.0f);
 				break;
 			case 1:
-				timer = 200;
+				GetComponent<playerTimer>().setCookingTimer(6.0f);
 				break;
 			case 2:
 				GetComponent<PlayerHealth>().respawn();
 				break;
 			}
+			Destroy(enemy);
 			break;
 		case STATE.COOKING:
 			GetComponent<PlayerHealth>().respawn();

@@ -8,11 +8,10 @@ public class playerTimer : MonoBehaviour {
     public TextMesh totalTimePlayedText;
     public TextMesh cookingTimerText;
 
-    private float cTimer = 0;
+    public float cTimer = 0;
     private float startTime;
 
     private bool isCooking = true;
-    private bool newEnemy = true;
     public int enemyType;
 
     // Use this for initialization
@@ -24,13 +23,7 @@ public class playerTimer : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         totalTime();
-        
-        if (newEnemy)
-        {
-          cookingTimerText.gameObject.SetActive(true);
-          getEnemyType();
-          setCookingTimer();
-        }
+
         if (isCooking)
         {
             enemyTimer();
@@ -41,27 +34,9 @@ public class playerTimer : MonoBehaviour {
         }
     }
 
-    int getEnemyType()
+	public void setCookingTimer(float seconds)
     {
-        return enemyType;
-    }
-
-    void setCookingTimer()
-    {
-        if (enemyType == 1)
-        {
-            cTimer = 3;
-        }
-        else if (enemyType == 2)
-        {
-            cTimer = 10;
-        }
-        else if (enemyType == 3)
-        {
-            cTimer = 30;
-        }
-
-        newEnemy = false;
+		cTimer = seconds;
         isCooking = true;
 
     }
@@ -69,7 +44,12 @@ public class playerTimer : MonoBehaviour {
     void enemyTimer()
     {
         cTimer -= Time.deltaTime;
-        cookingTimerText.text = cTimer.ToString("f0");
+		String timerText = cTimer.ToString("f0");
+		if (cTimer <=9){
+			cookingTimerText.text = "00:0" + timerText;
+		} else {
+			cookingTimerText.text = "00:" + timerText;
+		}
     }
 
     void totalTime()
