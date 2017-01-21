@@ -7,8 +7,12 @@ public class Player_Controller : MonoBehaviour {
     {
         FACING_LEFT,
         FACING_RIGHT,
-        FACING_FORWARD,
-        FACING_DOWN
+        FACING_FORWARD
+    };
+    enum player_standing_state
+    {
+        STANDING_UP,
+        LAYING_DOWN
     };
 
     public float speed;
@@ -16,6 +20,7 @@ public class Player_Controller : MonoBehaviour {
 
     private Animator player_ani;
     private player_state ps;
+    private player_standing_state p_standing_state;
     private bool can_animate;
     private float ani_run_time = 0.3f;
 
@@ -28,6 +33,7 @@ public class Player_Controller : MonoBehaviour {
         player_grounded = false;
         player_ani = GetComponent<Animator>();
         ps = player_state.FACING_FORWARD;
+        p_standing_state = player_standing_state.STANDING_UP;
         can_animate = true;
 	}
 	
@@ -54,43 +60,43 @@ public class Player_Controller : MonoBehaviour {
 
         if(Input.GetKey(KeyCode.A)) //Left
         { 
-            if (ps == player_state.FACING_FORWARD && can_animate)
+            if (ps == player_state.FACING_FORWARD && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
                 player_ani.Play("Forward_To_Left");
                 ps = player_state.FACING_LEFT;
                 can_animate = false;
             }
-            else if (ps == player_state.FACING_RIGHT && can_animate)
+            else if (ps == player_state.FACING_RIGHT && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
                 player_ani.Play("Right_To_Forward");
                 ps = player_state.FACING_FORWARD;
                 can_animate = false;
             }
-            else if(can_animate)
+            else if(can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
                 this.transform.Translate(-speed * Time.deltaTime, 0, 0);
             }
         }
         else if(Input.GetKey(KeyCode.D)) //Right
         {
-            if (ps == player_state.FACING_FORWARD && can_animate)
+            if (ps == player_state.FACING_FORWARD && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
                 player_ani.Play("Forward_To_Right");
                 ps = player_state.FACING_RIGHT;
                 can_animate = false;
             }
-            else if (ps == player_state.FACING_LEFT && can_animate)
+            else if (ps == player_state.FACING_LEFT && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
                 player_ani.Play("Left_To_Forward");
                 ps = player_state.FACING_FORWARD;
                 can_animate = false;
             }
-            else if(can_animate)
+            else if(can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
                 this.transform.Translate(speed * Time.deltaTime, 0, 0);
             }
         }
-        else if(Input.GetKeyDown(KeyCode.W) && can_animate) //Up
+        else if(Input.GetKeyDown(KeyCode.W) && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up
         {
             Debug.Log("W Pressed");
             if (ps == player_state.FACING_FORWARD)
@@ -98,6 +104,7 @@ public class Player_Controller : MonoBehaviour {
                 Debug.Log("Trying to face forward");
                 player_ani.Play("Down_To_Forward");
                 ps = player_state.FACING_FORWARD;
+                p_standing_state = player_standing_state.STANDING_UP;
                 can_animate = false;
             }
             else if (ps == player_state.FACING_LEFT)
@@ -105,6 +112,7 @@ public class Player_Controller : MonoBehaviour {
                 Debug.Log("Trying to face Left");
                 player_ani.Play("Down_To_Left");
                 ps = player_state.FACING_LEFT;
+                p_standing_state = player_standing_state.STANDING_UP;
                 can_animate = false;
             }
             else if (ps == player_state.FACING_RIGHT)
@@ -112,24 +120,28 @@ public class Player_Controller : MonoBehaviour {
                 Debug.Log("Trying to face Right");
                 player_ani.Play("Down_To_Right");
                 ps = player_state.FACING_RIGHT;
+                p_standing_state = player_standing_state.STANDING_UP;
                 can_animate = false;
             }
         }
-        else if(Input.GetKeyDown(KeyCode.S) && can_animate) //Down
+        else if(Input.GetKeyDown(KeyCode.S) && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
         {
             if (ps == player_state.FACING_FORWARD)
             {
                 player_ani.Play("Forward_To_Down");
+                p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
             }
             else if (ps == player_state.FACING_LEFT)
             {
                 player_ani.Play("Left_To_Down");
+                p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
             }
             else if (ps == player_state.FACING_RIGHT)
             {
                 player_ani.Play("Right_To_Down");
+                p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
             }
         }
