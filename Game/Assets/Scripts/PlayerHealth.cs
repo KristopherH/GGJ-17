@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 
@@ -17,6 +18,9 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
 		if (invincibility > 0){
 			invincibility--;
+		}
+		if (lives <= 0){
+			SceneManager.LoadSceneAsync("Game_Over");
 		}
 	}
 

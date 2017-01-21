@@ -68,7 +68,8 @@ public class PlayerAttack : MonoBehaviour {
 				scored = false;
 				break;
 			case 2:
-				GetComponent<PlayerHealth>().respawn();
+				//GetComponent<PlayerHealth>().respawn();
+				GetComponent<PlayerHealth>().lives = 0;
 				break;
 			}
 			Destroy(enemy);
