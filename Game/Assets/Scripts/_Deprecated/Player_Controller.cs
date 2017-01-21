@@ -18,7 +18,7 @@ public class Player_Controller : MonoBehaviour {
     public float speed;
     public bool player_grounded;
 
-    private Animator player_ani;
+    public Animator player_ani;
     public player_state ps;
     public player_standing_state p_standing_state;
     public bool can_animate;
@@ -145,13 +145,10 @@ public class Player_Controller : MonoBehaviour {
                 can_animate = false;
             }
         }
-        else if(Input.GetKeyUp(KeyCode.W))
-        {
 
-        }
-        else if(Input.GetKeyUp(KeyCode.S) && can_animate)
+        if (Input.GetKey(KeyCode.Space) && player_grounded)
         {
-           
+            GetComponent<Rigidbody>().AddForce(0, 250, 0);
         }
     }
 
@@ -171,6 +168,34 @@ public class Player_Controller : MonoBehaviour {
         if(col.tag == "Platform")
         {
             player_grounded = false;
+        }
+    }
+
+    public void FaceUp()
+    {
+        if (ps == player_state.FACING_FORWARD)
+        {
+            Debug.Log("Trying to face forward");
+            player_ani.Play("Down_To_Forward");
+            ps = player_state.FACING_FORWARD;
+            p_standing_state = player_standing_state.STANDING_UP;
+            can_animate = false;
+        }
+        else if (ps == player_state.FACING_LEFT)
+        {
+            Debug.Log("Trying to face Left");
+            player_ani.Play("Down_To_Left");
+            ps = player_state.FACING_LEFT;
+            p_standing_state = player_standing_state.STANDING_UP;
+            can_animate = false;
+        }
+        else if (ps == player_state.FACING_RIGHT)
+        {
+            Debug.Log("Trying to face Right");
+            player_ani.Play("Down_To_Right");
+            ps = player_state.FACING_RIGHT;
+            p_standing_state = player_standing_state.STANDING_UP;
+            can_animate = false;
         }
     }
 }
