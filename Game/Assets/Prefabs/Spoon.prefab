@@ -188,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   moveDirection: {x: 1, y: 0, z: 0}
-  speed: 0
+  speed: 999
   grounded: 0
 --- !u!114 &11499056
 MonoBehaviour:

@@ -12,6 +12,9 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		if (speed == 999)
+		speed = 0f; 
+		else 
 		speed = Random.Range(0.03f, 0.08f);
 	}
 	
