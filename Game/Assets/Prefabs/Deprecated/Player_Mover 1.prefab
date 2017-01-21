@@ -483,9 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e65dc0e8a885f4c8b915d1172ffc0fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeDoorAttackTime: 0
-  collectedEnemyType: 0
-  timer: 0
+  collectedEnemy: {fileID: 0}
 --- !u!114 &11495264
 MonoBehaviour:
   m_ObjectHideFlags: 1

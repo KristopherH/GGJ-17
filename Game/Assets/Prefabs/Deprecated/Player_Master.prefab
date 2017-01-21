@@ -148,11 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   player_grounded: 0
-  player_ani: {fileID: 0}
-  ps: 0
-  p_standing_state: 0
-  can_animate: 0
-  ani_run_time: 0.1
   player: {fileID: 105548}
 --- !u!1001 &100100000
 Prefab:
