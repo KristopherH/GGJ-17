@@ -22,7 +22,7 @@ public class Player_Controller : MonoBehaviour {
     public player_state ps;
     public player_standing_state p_standing_state;
     public bool can_animate;
-    public float ani_run_time = 0.3f;
+    public float ani_run_time = 0.1f;
 
     [SerializeField]
     GameObject player;
@@ -49,7 +49,7 @@ public class Player_Controller : MonoBehaviour {
         {
             if(ani_run_time <= 0)
             {
-                ani_run_time = 0.3f;
+                ani_run_time = 0.1f;
                 can_animate = true;
             }
             else
