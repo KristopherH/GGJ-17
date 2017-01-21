@@ -31,6 +31,7 @@ public class playerTimer : MonoBehaviour {
         if (cTimer <= 0)
         {
             isCooking = false;
+			SpoonSpawner.Instance.RegisterCook ();
         }
     }
 
