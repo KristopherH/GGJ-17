@@ -5,33 +5,25 @@ using System;
 
 public class playerTimer : MonoBehaviour {
 
-    public Text totalTimePlayedText;
-    public Text cookingTimerText;
+    public TextMesh totalTimePlayedText;
+    public TextMesh cookingTimerText;
 
-    private float cTimer = 0;
+    public float cTimer = 0;
     private float startTime;
 
-    private bool isCooking = false;
-    private bool newEnemy = true;
+    private bool isCooking = true;
     public int enemyType;
 
     // Use this for initialization
     void Start() {
         startTime = Time.time;
-        cookingTimerText = GetComponent<Text>();
-        totalTimePlayedText.enabled = false;
+        totalTimePlayedText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update() {
         totalTime();
 
-        if (newEnemy)
-        {
-          cookingTimerText.enabled = true;
-          getEnemyType();
-          setCookingTimer();
-        }
         if (isCooking)
         {
             enemyTimer();
@@ -39,31 +31,12 @@ public class playerTimer : MonoBehaviour {
         if (cTimer <= 0)
         {
             isCooking = false;
-            cookingTimerText.text = "Feed Me";
         }
     }
 
-    int getEnemyType()
+	public void setCookingTimer(float seconds)
     {
-        return enemyType;
-    }
-
-    void setCookingTimer()
-    {
-        if (enemyType == 1)
-        {
-            cTimer = 3;
-        }
-        else if (enemyType == 2)
-        {
-            cTimer = 10;
-        }
-        else if (enemyType == 3)
-        {
-            cTimer = 30;
-        }
-
-        newEnemy = false;
+		cTimer = seconds;
         isCooking = true;
 
     }
@@ -71,7 +44,12 @@ public class playerTimer : MonoBehaviour {
     void enemyTimer()
     {
         cTimer -= Time.deltaTime;
-        cookingTimerText.text = cTimer.ToString("f0") + "s";
+		String timerText = cTimer.ToString("f0");
+		if (cTimer <=9){
+			cookingTimerText.text = "00:0" + timerText;
+		} else {
+			cookingTimerText.text = "00:" + timerText;
+		}
     }
 
     void totalTime()

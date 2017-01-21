@@ -5,7 +5,9 @@ public class EnemySpawner : MonoBehaviour {
 
 	public bool spawningActive;
 
-	[SerializeField] GameObject enemyPrefab;
+	[SerializeField] GameObject enemyPrefab1;
+	[SerializeField] GameObject enemyPrefab2;
+	[SerializeField] GameObject enemyPrefab3;
 	[SerializeField] ArrayList enemies;
 	[SerializeField] int spawnTimer;
 
@@ -32,14 +34,30 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	public void Spawn(){
 		//SpawnEnemy
-		GameObject newEnemy = Instantiate(enemyPrefab);
+		int type = (int)Random.Range(0, 3/*add number of enemy types*/);
+		GameObject newEnemy;
+		switch(type){
+		case 0:
+			newEnemy = Instantiate(enemyPrefab1);
+			break;
+		case 1:
+			newEnemy = Instantiate(enemyPrefab2);
+			break;
+		case 2:
+		 	newEnemy = Instantiate(enemyPrefab3);
+			break;
+		default:
+			newEnemy = Instantiate(enemyPrefab3);
+			break;
+		}
+
 		int dice = (int) Random.Range(0, 100);
 		if ( dice < 50){
 			newEnemy.GetComponent<EnemyController>().moveDirection = enemyDirection;
 		} else {
 			newEnemy.GetComponent<EnemyController>().moveDirection = -enemyDirection;
 		}
-		newEnemy.GetComponent<EnemyController>().type = (int)Random.Range(0, 3/*add number of enemy types*/);
+		newEnemy.GetComponent<EnemyController>().type = type;
 		newEnemy.transform.position = this.transform.position;
 		enemyDirectionAtSpawn.Normalize();
 		enemyDirectionAtSpawn*=forceOfSpawn;

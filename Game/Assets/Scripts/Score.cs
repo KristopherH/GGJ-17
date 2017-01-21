@@ -31,8 +31,9 @@ public class Score : MonoBehaviour
        
     }
 
-    void increaseScore(int score = 1)
+    public void increaseScore(int score = 1)
     {
+		scoreText.text = "";
         scores[0] += score;
         for (int i = score_length - 1; i >= 0; i--)
         {
