@@ -33,6 +33,7 @@ public class SpoonSpawner : MonoBehaviour {
 
 	public void RegisterCook()
 	{
+		Debug.Log ("COOK");
 		cookCountDown--;
 		if (cookCountDown <= 0)
 			Spawn ();
