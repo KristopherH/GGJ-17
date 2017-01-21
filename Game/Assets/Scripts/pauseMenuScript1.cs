@@ -10,8 +10,10 @@ public class pauseMenuScript1 : MonoBehaviour {
 
     void Start()
     {
-        PauseUI.SetActive(false);
-        enemyStats.SetActive(false);
+		if(PauseUI == null) PauseUI = new GameObject ();
+		PauseUI.SetActive(false);
+		if (enemyStats == null)	enemyStats = new GameObject ();
+		enemyStats.SetActive (false);
     }
 
     void Update()

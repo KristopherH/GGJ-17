@@ -95,35 +95,7 @@ public class Player_Controller : MonoBehaviour {
             {
                 this.transform.Translate(speed * Time.deltaTime, 0, 0);
             }
-        }
-        else if((Input.GetKeyDown(KeyCode.W) || Input.GetAxis("Y/T") == 1)  && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up
-        {
-            Debug.Log("W Pressed");
-            if (ps == player_state.FACING_FORWARD)
-            {
-                Debug.Log("Trying to face forward");
-                player_ani.Play("Down_To_Forward");
-                ps = player_state.FACING_FORWARD;
-                p_standing_state = player_standing_state.STANDING_UP;
-                can_animate = false;
-            }
-            else if (ps == player_state.FACING_LEFT)
-            {
-                Debug.Log("Trying to face Left");
-                player_ani.Play("Down_To_Left");
-                ps = player_state.FACING_LEFT;
-                p_standing_state = player_standing_state.STANDING_UP;
-                can_animate = false;
-            }
-            else if (ps == player_state.FACING_RIGHT)
-            {
-                Debug.Log("Trying to face Right");
-                player_ani.Play("Down_To_Right");
-                ps = player_state.FACING_RIGHT;
-                p_standing_state = player_standing_state.STANDING_UP;
-                can_animate = false;
-            }
-        }
+        }        
         else if((Input.GetKeyDown(KeyCode.S) || Input.GetAxis("X/S") == 1) && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
         {
             if (ps == player_state.FACING_FORWARD)
@@ -145,6 +117,34 @@ public class Player_Controller : MonoBehaviour {
                 can_animate = false;
             }
         }
+		else if(Input.GetKeyUp(KeyCode.S) && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up
+		{
+			Debug.Log("S Not Pressed");
+			if (ps == player_state.FACING_FORWARD)
+			{
+				Debug.Log("Trying to face forward");
+				player_ani.Play("Down_To_Forward");
+				ps = player_state.FACING_FORWARD;
+				p_standing_state = player_standing_state.STANDING_UP;
+				can_animate = false;
+			}
+			else if (ps == player_state.FACING_LEFT)
+			{
+				Debug.Log("Trying to face Left");
+				player_ani.Play("Down_To_Left");
+				ps = player_state.FACING_LEFT;
+				p_standing_state = player_standing_state.STANDING_UP;
+				can_animate = false;
+			}
+			else if (ps == player_state.FACING_RIGHT)
+			{
+				Debug.Log("Trying to face Right");
+				player_ani.Play("Down_To_Right");
+				ps = player_state.FACING_RIGHT;
+				p_standing_state = player_standing_state.STANDING_UP;
+				can_animate = false;
+			}
+		}
 
         if ((Input.GetKey(KeyCode.Space) || Input.GetAxis("A/X") == 1) && player_grounded)
         {
