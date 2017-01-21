@@ -12,6 +12,10 @@ public class BackgroundController : MonoBehaviour {
 	[SerializeField]
 	float phaseSpeed;
 
+	[SerializeField]
+	float startWait;
+	float startTimer;
+
 	Color targetColor;
 	float phaseTimer;
 	Renderer rend;
@@ -24,6 +28,7 @@ public class BackgroundController : MonoBehaviour {
 
 	void Start()
 	{
+		startTimer = startWait;
 		phaseTimer = 0.0f;
 		lastColourIndex = 0;
 		targetColor = colours [0];
@@ -32,6 +37,10 @@ public class BackgroundController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if (startWait > 0.0f) {
+			startWait -= Time.deltaTime;
+			return;
+		}
 		if (phaseTimer <= 0.0f) 
 		{
 			phaseTimer = phaseTime;

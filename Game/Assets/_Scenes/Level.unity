@@ -1950,8 +1950,9 @@ MonoBehaviour:
   - {r: 0.35294116, g: 1, b: 0.38417855, a: 0}
   - {r: 0.29411763, g: 0.38661247, b: 1, a: 0}
   - {r: 1, g: 0.33088237, b: 0.98154175, a: 0}
-  phaseTime: 1.8
-  phaseSpeed: 0.8
+  phaseTime: 0.33
+  phaseSpeed: 10
+  startWait: 1.4
 --- !u!1001 &1869440598
 Prefab:
   m_ObjectHideFlags: 0
