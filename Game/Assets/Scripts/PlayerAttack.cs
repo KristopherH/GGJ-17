@@ -40,7 +40,8 @@ public class PlayerAttack : MonoBehaviour {
 				StartCoroutine ("DoorAttackTimer");
 
 				if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
-					GetComponent<Rigidbody>().AddForce(0, 200, 0);
+					GetComponent<Rigidbody>().AddForce(0, 500, 0);
+                    GetComponent<Player_Controller>().FaceUp();
 				}
 			}
 		}

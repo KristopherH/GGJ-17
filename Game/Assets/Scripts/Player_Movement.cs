@@ -12,6 +12,9 @@ public class Player_Movement : MonoBehaviour
     public Animator player_animator;
     private GameObject mover;
 
+	//Add player going back straight when floor jumping (From player attack script)
+
+
     // Use this for initialization
     void Awake ()
     {
