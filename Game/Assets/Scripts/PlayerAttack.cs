@@ -38,6 +38,10 @@ public class PlayerAttack : MonoBehaviour {
 				doorTimer = activeDoorAttackTime;
 				door.tag = "DoorActive";
 				StartCoroutine ("DoorAttackTimer");
+
+				if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
+					GetComponent<Rigidbody>().AddForce(0, 200, 0);
+				}
 			}
 		}
 	}

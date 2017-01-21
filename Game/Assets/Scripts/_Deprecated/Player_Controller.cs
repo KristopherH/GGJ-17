@@ -29,7 +29,7 @@ public class Player_Controller : MonoBehaviour {
 
 	void Awake ()
     {
-        speed = 5.0f;
+        speed = 10.0f;
         player_grounded = false;
         player_ani = GetComponent<Animator>();
         ps = player_state.FACING_FORWARD;
