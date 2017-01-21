@@ -24,8 +24,10 @@ public class playerTimer : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        totalTime();
 
+       // gameObject.transform.FindChild("TimerText").gameObject.GetComponent<Text>().enabled = false;
+        totalTime();
+        
         if (newEnemy)
         {
           cookingTimerText.enabled = true;
