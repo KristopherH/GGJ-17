@@ -58,14 +58,14 @@
      <Compile Include="Assets\Scripts\LivesDisplay.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerAttack.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+     <Compile Include="Assets\Scripts\Player_Controller.cs" />
      <Compile Include="Assets\Scripts\Player_Grounded.cs" />
      <Compile Include="Assets\Scripts\Player_Movement.cs" />
      <Compile Include="Assets\Scripts\PopCorn.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\_Deprecated\Player_Controller.cs" />
+     <Compile Include="Assets\Scripts\_Deprecated\PlayerController.cs" />
      <Compile Include="Assets\Scripts\pauseMenuScript1.cs" />
      <Compile Include="Assets\Scripts\playerTimer.cs" />
  <Reference Include="UnityEngine.UI">

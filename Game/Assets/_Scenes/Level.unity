@@ -467,8 +467,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9999999, y: 1, z: 0.9999999}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.2299626, y: 0.9062009, z: 0.44203627}
+  m_Center: {x: -0.018357517, y: -0.1718998, z: 0.028431546}
 --- !u!1001 &241627235
 Prefab:
   m_ObjectHideFlags: 0
@@ -1489,6 +1489,26 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6594614, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
+      propertyPath: m_Size.y
+      value: 0.6939209
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594614, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
+      propertyPath: m_Center.y
+      value: -0.15303956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594614, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
+      propertyPath: m_Size.z
+      value: 0.38622975
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594614, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
+      propertyPath: m_Center.x
+      value: -0.0000000018911186
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594614, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
+      propertyPath: m_Center.z
+      value: 0.02379578
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5425232, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 910984476072041c6ab4ea8f91c1b35a, type: 2}
@@ -2035,7 +2055,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1337829552}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -2294,6 +2314,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+    - {fileID: 6522540, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1573521350 stripped
