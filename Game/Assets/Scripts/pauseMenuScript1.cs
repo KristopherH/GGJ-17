@@ -5,7 +5,7 @@ public class pauseMenuScript1 : MonoBehaviour {
 
     public GameObject PauseUI;
 
-    private bool paused = false;
+    public bool paused = false;
 
     void Start()
     {

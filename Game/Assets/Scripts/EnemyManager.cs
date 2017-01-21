@@ -13,15 +13,17 @@ public class EnemyManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (startup <= 0){
-			int dice = Random.Range(0, 100);
-			if (dice < 1){
-				int selected = Random.Range(0, spawners.Length);
-				spawners[selected].Spawn();
+		GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		if (Enemies.Length < 50){
+			if (startup <= 0){
+				int dice = Random.Range(0, 100);
+				if (dice < 1){
+					int selected = Random.Range(0, spawners.Length);
+					spawners[selected].Spawn();
+				}
+			} else {
+				startup--;
 			}
-		} else {
-			startup--;
 		}
 	}
 }
