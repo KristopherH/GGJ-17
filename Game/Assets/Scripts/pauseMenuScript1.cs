@@ -4,12 +4,14 @@ using System.Collections;
 public class pauseMenuScript1 : MonoBehaviour {
 
     public GameObject PauseUI;
+    public GameObject enemyStats;
 
     public bool paused = false;
 
     void Start()
     {
         PauseUI.SetActive(false);
+        enemyStats.SetActive(false);
     }
 
     void Update()
@@ -21,11 +23,13 @@ public class pauseMenuScript1 : MonoBehaviour {
         if (paused)
         {
             PauseUI.SetActive(true);
+            enemyStats.SetActive(true);
             Time.timeScale = 0;
         }
         if(!paused)
         {
             PauseUI.SetActive(false);
+            enemyStats.SetActive(false);
             Time.timeScale = 1;
         }
     }
