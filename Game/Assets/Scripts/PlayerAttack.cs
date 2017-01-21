@@ -35,9 +35,10 @@ public class PlayerAttack : MonoBehaviour {
 				scored = true;
 				GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 				GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
-				doorTimer = activeDoorAttackTime;
-				door.tag = "DoorActive";
-				StartCoroutine ("DoorAttackTimer");
+//				doorTimer = activeDoorAttackTime;
+//				door.tag = "DoorActive";
+//				StartCoroutine ("DoorAttackTimer");
+				Shoot();
 
 				if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
 					GetComponent<Rigidbody>().AddForce(0, 500, 0);
@@ -47,16 +48,16 @@ public class PlayerAttack : MonoBehaviour {
 		}
 	}
 
-	IEnumerable DoorAttackTimer(){
-		if (doorTimer > 0.0f) {
-			doorTimer -= Time.deltaTime;
-			if (doorTimer <= 0.0f) 
-			{
-				door.tag = "Player";
-			}
-		}			
-		yield return null;
-	}
+//	IEnumerable DoorAttackTimer(){
+//		if (doorTimer > 0.0f) {
+//			doorTimer -= Time.deltaTime;
+//			if (doorTimer <= 0.0f) 
+//			{
+//				door.tag = "Player";
+//			}
+//		}			
+//		yield return null;
+//	}
 
 	void OnCollisionEnter (Collision collision){
 		if (collision.gameObject.tag == "Enemy"){
@@ -98,5 +99,9 @@ public class PlayerAttack : MonoBehaviour {
 	public float GetAttackPower()
 	{
 		return doorTimer;
+	}
+
+	void Shoot(){
+
 	}
 }
