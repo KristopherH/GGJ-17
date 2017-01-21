@@ -58,7 +58,7 @@ public class Player_Controller : MonoBehaviour {
             }
         }
 
-        if(Input.GetKey(KeyCode.A)) //Left
+        if(Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0) //Left
         { 
             if (ps == player_state.FACING_FORWARD && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
@@ -77,7 +77,7 @@ public class Player_Controller : MonoBehaviour {
                 this.transform.Translate(-speed * Time.deltaTime, 0, 0);
             }
         }
-        else if(Input.GetKey(KeyCode.D)) //Right
+        else if(Input.GetKey(KeyCode.D) || Input.GetAxis("Horizontal") > 0) //Right
         {
             if (ps == player_state.FACING_FORWARD && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
@@ -96,7 +96,7 @@ public class Player_Controller : MonoBehaviour {
                 this.transform.Translate(speed * Time.deltaTime, 0, 0);
             }
         }
-        else if(Input.GetKeyDown(KeyCode.W) && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up
+        else if((Input.GetKeyDown(KeyCode.W) || Input.GetAxis("Y/T") == 1)  && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up
         {
             Debug.Log("W Pressed");
             if (ps == player_state.FACING_FORWARD)
@@ -124,7 +124,7 @@ public class Player_Controller : MonoBehaviour {
                 can_animate = false;
             }
         }
-        else if(Input.GetKeyDown(KeyCode.S) && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
+        else if((Input.GetKeyDown(KeyCode.S) || Input.GetAxis("X/S") == 1) && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
         {
             if (ps == player_state.FACING_FORWARD)
             {
@@ -146,7 +146,7 @@ public class Player_Controller : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.Space) && player_grounded)
+        if ((Input.GetKey(KeyCode.Space) || Input.GetAxis("A/X") == 1) && player_grounded)
         {
             GetComponent<Rigidbody>().AddForce(0, 150, 0);
         }
