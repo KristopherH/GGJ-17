@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\EnemyLayerIgnore.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyTriggerCollider.cs" />
+     <Compile Include="Assets\Scripts\Player_Grounded.cs" />
      <Compile Include="Assets\Scripts\Player_Movement.cs" />
      <Compile Include="Assets\Scripts\Rotate.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />

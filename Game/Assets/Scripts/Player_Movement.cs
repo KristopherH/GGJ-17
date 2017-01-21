@@ -7,16 +7,22 @@ public class Player_Movement : MonoBehaviour
     private float   speed;
     private bool    face_left; //used later for animation maybe?
     private bool    face_right; //used later for animation maybe?
-    private Rigidbody rb;
+    public bool    flipped_left;
+    public bool    flipped_right;
+    public Animator player_animator;
+    private GameObject mover;
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
-        rb = GetComponent<Rigidbody>();
-        face_left   = true;
-        face_right  = false;
-        grounded    = false;
-        speed       = 10;
+        face_left       = true;
+        face_right      = false;
+        flipped_left    = false;
+        flipped_right   = false;
+        grounded        = false;
+        speed           = 10;
+        player_animator = GameObject.Find("Player_Manager").GetComponent<Animator>();
+        mover = GameObject.Find("Player_Mover");
 	}
 	
 	// Update is called once per frame
@@ -53,32 +59,53 @@ public class Player_Movement : MonoBehaviour
             move_right  = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
+            mover.transform.Translate(speed * Time.deltaTime, 0, 0);
         }
 
         if (move_left)
         {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            mover.transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
         else if(move_right)
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
+            mover.transform.Translate(speed * Time.deltaTime, 0, 0);
         }
     }
 
     void Flip()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !flipped_left)
         {
-            Vector3 pushPoint = transform.position + new Vector3(-0.5f, 0, -0.5f);
-            rb.AddForceAtPosition(new Vector3(0, 0, 900), pushPoint);
+            if (flipped_right)
+            {
+                flipped_right = false;
+                flipped_left = false;
+                player_animator.Play("Flip_Right_To_Left");
+            }
+            else
+            {
+                flipped_left = true;
+                player_animator.Play("Flip_Left");
+            }
+            Debug.Log("Tried to run Flip_Left");
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !flipped_right)
         {
-            Vector3 pushPoint = transform.position + new Vector3(0.5f, 0, 0.5f);
+            if (flipped_left)
+            {
+                flipped_left = false;
+                flipped_right = false;
+                player_animator.Play("Flip_Left_To_Right");
+            }
+            else
+            {
+                flipped_right = true;
+                player_animator.Play("Flip_Right");
+            }
+            Debug.Log("Tried to run Flip_Right");
         }
         
     }
