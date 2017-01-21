@@ -11,7 +11,8 @@ public class PlayerAttack : MonoBehaviour {
 
 	STATE playerState;
 
-	[SerializeField] GameObject collectedEnemy;
+	[SerializeField] int collectedEnemyType;
+	[SerializeField] int timer;
 
 	// Use this for initialization
 	void Start () {
@@ -23,22 +24,47 @@ public class PlayerAttack : MonoBehaviour {
 		if (GetComponent<PlayerHealth>().invincibility > 0){
 			playerState = STATE.INVINCIBLE;
 		}
+		if (playerState == STATE.COOKING && timer > 0){
+			timer--;
+		} else if (timer == 0){
+			playerState = STATE.OPEN;
+		}
 	}
+
 	void OnCollisionEnter (Collision collision){
 		if (collision.gameObject.tag == "Enemy"){
-			switch(playerState){
-			case STATE.OPEN:
-				collectedEnemy = collision.gameObject;
-				playerState = STATE.COOKING;
+			EnemyCollision(collision.gameObject);
+		}
+	}
+
+	void EnemyCollision(GameObject enemy){
+		switch(playerState){
+		case STATE.OPEN:
+			collectedEnemyType = enemy.GetComponent<EnemyController>().type;
+			playerState = STATE.COOKING;
+			switch(collectedEnemyType){
+			case 0:
+				timer = 100;
 				break;
-			case STATE.COOKING:
+			case 1:
+				timer = 200;
+				break;
+			case 2:
 				GetComponent<PlayerHealth>().respawn();
-				playerState = STATE.INVINCIBLE;
-				break;
-			case STATE.INVINCIBLE:
-				Destroy(collision.gameObject);
 				break;
 			}
+			break;
+		case STATE.COOKING:
+			GetComponent<PlayerHealth>().respawn();
+			playerState = STATE.INVINCIBLE;
+			break;
+		case STATE.INVINCIBLE:
+			Destroy(enemy);
+			break;
 		}
+	}
+	
+	void openDoor(){
+
 	}
 }
