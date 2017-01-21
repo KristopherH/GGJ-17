@@ -18,6 +18,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerState = STATE.OPEN;
+		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
 	}
 	
 	// Update is called once per frame
@@ -30,6 +31,7 @@ public class PlayerAttack : MonoBehaviour {
 			if (!scored){
 				scored = true;
 				GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
+				GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
 			}
 		}
 	}
@@ -45,6 +47,7 @@ public class PlayerAttack : MonoBehaviour {
 		case STATE.OPEN:
 			collectedEnemyType = enemy.GetComponent<EnemyController>().type;
 			playerState = STATE.COOKING;
+			GameObject.Find("DoorHinge").GetComponent<DoorController>().Eat();
 			switch(collectedEnemyType){
 			case 0:
 				GetComponent<playerTimer>().setCookingTimer(3.0f);
@@ -68,9 +71,5 @@ public class PlayerAttack : MonoBehaviour {
 			Destroy(enemy);
 			break;
 		}
-	}
-	
-	void openDoor(){
-
 	}
 }
