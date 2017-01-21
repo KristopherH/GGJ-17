@@ -8,6 +8,7 @@ public class FollowPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		target = GameObject.Find("Player_Mover");
 	}
 	
 	// Update is called once per frame
