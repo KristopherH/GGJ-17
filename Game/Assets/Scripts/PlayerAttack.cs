@@ -14,6 +14,9 @@ public class PlayerAttack : MonoBehaviour {
 
 	[SerializeField] int collectedEnemyType;
 	[SerializeField] int timer;
+
+	[SerializeField] GameObject projectileBP;
+
 	bool scored = true;
 	GameObject door;
 
@@ -91,7 +94,10 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void Shoot(){
-
+		//GameObject projectile;
+		//projectile = Instantiate(projectileBP);
+		//projectile.transform.position = transform.position;
+		//projectile.GetComponent<projectileMovement>().direction = new Vector3(
 	}
 
 	void SuccessfulCook(){
