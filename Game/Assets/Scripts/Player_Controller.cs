@@ -103,21 +103,21 @@ public class Player_Controller : MonoBehaviour {
                 player_ani.Play("Forward_To_Down");
                 p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
-				SoundsController.Play("MicrowaveFlip");
+				SoundsController.Instance.Play("MicrowaveFlip");
 			}
             else if (ps == player_state.FACING_LEFT)
             {
                 player_ani.Play("Left_To_Down");
                 p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
-				SoundsController.Play("MicrowaveFlip");
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
             else if (ps == player_state.FACING_RIGHT)
             {
                 player_ani.Play("Right_To_Down");
                 p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
-				SoundsController.Play("MicrowaveFlip");
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
         }
 		else if(Input.GetKeyUp(KeyCode.S) && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up

@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour {
 		playerState = STATE.OPEN;
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
 		door = GameObject.Find ("Door");
-		SoundsController.Play("GameStart");
+		SoundsController.Instance.Play("GameStart");
 	}
 	
 	// Update is called once per frame
@@ -36,8 +36,8 @@ public class PlayerAttack : MonoBehaviour {
 				scored = true;
 				GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 				GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
-				SoundsController.Play("PING");
-				SoundsController.Play("MicrowaveDoorOpen");
+				SoundsController.Instance.Play("PING");
+				SoundsController.Instance.Play("MicrowaveDoorOpen");
 //				doorTimer = activeDoorAttackTime;
 //				door.tag = "DoorActive";
 //				StartCoroutine ("DoorAttackTimer");
@@ -74,21 +74,21 @@ public class PlayerAttack : MonoBehaviour {
 			collectedEnemyType = enemy.GetComponent<EnemyController>().type;
 			playerState = STATE.COOKING;
 			GameObject.Find("DoorHinge").GetComponent<DoorController>().Eat();
-			SoundsController.Play("MicrowaveDoorClose");
+			SoundsController.Instance.Play("MicrowaveDoorClose");
 			switch(collectedEnemyType){
 			case 0:
 				GetComponent<playerTimer>().setCookingTimer(3.0f);
-				SoundsController.Play("MicrowaveCooking");
+				SoundsController.Instance.Play("MicrowaveCooking");
 				scored = false;
 				break;
 			case 1:
 				GetComponent<playerTimer>().setCookingTimer(6.0f);
-				SoundsController.Play("MicrowaveCooking");
+				SoundsController.Instance.Play("MicrowaveCooking");
 				scored = false;
 				break;
 			case 2:
 				GetComponent<PlayerHealth>().respawn();
-				SoundsController.Play("MicrowaveBad");
+				SoundsController.Instance.Play("MicrowaveBad");
 				break;
 			}
 			Destroy(enemy);
