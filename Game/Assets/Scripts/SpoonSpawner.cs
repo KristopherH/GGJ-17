@@ -17,18 +17,22 @@ public class SpoonSpawner : MonoBehaviour {
 	[SerializeField]
 	GameObject spoonPrefab;
 	[SerializeField]
-	int cookDelay;
+	int startCookDelay;
+
+	[SerializeField]
+	int maxCookDelay;
 
 	int cookCountDown;
 
 	// Use this for initialization
 	void Start () {
-		
+		cookCountDown = startCookDelay;
 	}
 
 	// Update is called once per frame
 	void Update () {
-			
+		if(Input.GetKeyDown(KeyCode.M))
+			RegisterCook();
 	}
 
 	public void RegisterCook()
@@ -41,8 +45,9 @@ public class SpoonSpawner : MonoBehaviour {
 
 	void Spawn()
 	{
-		cookDelay++;
-		cookCountDown = cookDelay;
+		Debug.Log ("SPAWN");
+		startCookDelay = startCookDelay == maxCookDelay ? maxCookDelay : startCookDelay + 1;
+		cookCountDown = startCookDelay;
 		Instantiate (spoonPrefab, gameObject.transform.position, gameObject.transform.rotation);  
 	}
 }
