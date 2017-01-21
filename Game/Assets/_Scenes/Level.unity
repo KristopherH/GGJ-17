@@ -484,7 +484,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 492598, guid: 27a255eb3842f4c68aa325ffb19bed28, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.31
+      value: 15.32
       objectReference: {fileID: 0}
     - target: {fileID: 492598, guid: 27a255eb3842f4c68aa325ffb19bed28, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1868,6 +1868,7 @@ GameObject:
   - 33: {fileID: 1858168759}
   - 65: {fileID: 1858168758}
   - 23: {fileID: 1858168757}
+  - 114: {fileID: 1858168761}
   m_Layer: 0
   m_Name: BackGround
   m_TagString: Untagged
@@ -1932,6 +1933,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &1858168761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1858168756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef48fcafbd2db4cccb15cceec1ce0eb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colours:
+  - {r: 1, g: 0.35294116, b: 0.35294116, a: 0}
+  - {r: 0.91176474, g: 1, b: 0.3602941, a: 0}
+  - {r: 0.35294116, g: 1, b: 0.38417855, a: 0}
+  - {r: 0.29411763, g: 0.38661247, b: 1, a: 0}
+  - {r: 1, g: 0.33088237, b: 0.98154175, a: 0}
+  phaseTime: 1.8
+  phaseSpeed: 0.8
 --- !u!1001 &1869440598
 Prefab:
   m_ObjectHideFlags: 0
@@ -2117,7 +2137,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 492598, guid: 27a255eb3842f4c68aa325ffb19bed28, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.56
+      value: 20.48
       objectReference: {fileID: 0}
     - target: {fileID: 492598, guid: 27a255eb3842f4c68aa325ffb19bed28, type: 2}
       propertyPath: m_LocalPosition.y

@@ -24,6 +24,7 @@ public class BackgroundController : MonoBehaviour {
 
 	void Start()
 	{
+		phaseTimer = 0.0f;
 		lastColourIndex = 0;
 		targetColor = colours [0];
 	}
@@ -31,7 +32,7 @@ public class BackgroundController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (phaseTimer < 0.0f) 
+		if (phaseTimer <= 0.0f) 
 		{
 			phaseTimer = phaseTime;
 			lastColourIndex = lastColourIndex + 1 >= colours.Length ? 0 : lastColourIndex + 1;
