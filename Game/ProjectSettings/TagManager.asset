@@ -8,7 +8,6 @@ TagManager:
   - Lava
   - PlatformLimit
   - Enemy
-  - Player
   layers:
   - Default
   - TransparentFX
