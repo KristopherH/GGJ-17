@@ -17,7 +17,7 @@ public class Player_Controller : MonoBehaviour {
     private Animator player_ani;
     private player_state ps;
     private bool can_animate;
-    private float ani_run_time = 0.5f;
+    private float ani_run_time = 0.3f;
 
     [SerializeField]
     GameObject player;
