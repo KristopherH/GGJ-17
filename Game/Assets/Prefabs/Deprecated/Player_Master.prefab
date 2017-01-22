@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2349820}
   - 65: {fileID: 6549514}
   - 65: {fileID: 6510504}
+  - 65: {fileID: 6576030}
   m_Layer: 8
   m_Name: Player_Main
   m_TagString: Player
@@ -158,10 +159,7 @@ GameObject:
   - 114: {fileID: 11467376}
   - 114: {fileID: 11405900}
   - 114: {fileID: 11453374}
-  - 54: {fileID: 5400752}
-  - 65: {fileID: 6573078}
-  - 114: {fileID: 11459428}
-  - 114: {fileID: 11439422}
+  - 54: {fileID: 5486658}
   m_Layer: 8
   m_Name: Player_Master
   m_TagString: Player
@@ -262,6 +260,7 @@ GameObject:
   - 4: {fileID: 492090}
   - 114: {fileID: 11433364}
   - 114: {fileID: 11446272}
+  - 114: {fileID: 11447704}
   m_Layer: 8
   m_Name: SpoonMode
   m_TagString: Untagged
@@ -453,7 +452,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.76, z: -0.9}
+  m_LocalPosition: {x: 0.0042897146, y: 4.76, z: -0.9041417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436452}
@@ -865,7 +864,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107642}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &5400752
+--- !u!54 &5486658
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -982,18 +981,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2299626, y: 0.9062009, z: 0.44203627}
   m_Center: {x: -0.018357517, y: -0.1718998, z: 0.028431546}
---- !u!65 &6573078
+--- !u!65 &6576030
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134256}
+  m_GameObject: {fileID: 105548}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.2299626, y: 0.9062009, z: 0.44203627}
+  m_Center: {x: -0.018357517, y: -0.1718998, z: 0.028431546}
 --- !u!65 &6577362
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1157,22 +1156,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modeLength: 10
---- !u!114 &11439422
+  endParticles: {fileID: 0}
+--- !u!114 &11446272
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134256}
+  m_GameObject: {fileID: 166282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f8c818bd4ce48be91e393b0affc928, type: 3}
+  m_Script: {fileID: 11500000, guid: 73c48fec51338453cb4aa37fc52dedc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 0}
-  InvincibilityAfterRespawn: 0
-  invincibility: 0
-  lives: 0
---- !u!114 &11446272
+  staggerAmount: 0.1
+  staggerDelay: 0.01
+--- !u!114 &11447704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1200,21 +1198,6 @@ MonoBehaviour:
   cookingTimerText: {fileID: 10241394}
   cTimer: 0
   enemyType: 0
---- !u!114 &11459428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65dc0e8a885f4c8b915d1172ffc0fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeDoorAttackTime: 1
-  collectedEnemyType: 0
-  timer: 0
-  projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
 --- !u!114 &11467376
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1227,9 +1210,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDoorAttackTime: 1
+  playerState: 0
   collectedEnemyType: 0
-  timer: 0
+  invincibilityTimer: 0
   projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
+  spoonMode: {fileID: 166282}
+  scored: 1
 --- !u!114 &11473288
 MonoBehaviour:
   m_ObjectHideFlags: 1

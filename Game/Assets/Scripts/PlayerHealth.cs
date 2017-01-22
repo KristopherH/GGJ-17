@@ -8,10 +8,12 @@ public class PlayerHealth : MonoBehaviour {
 	public int InvincibilityAfterRespawn;
 	public int invincibility;
 	public int lives;
+	bool alive;
 
 	// Use this for initialization
 	void Start () {
 		lives = 3;
+		alive = true;
 	}
 	
 	// Update is called once per frame
@@ -19,9 +21,18 @@ public class PlayerHealth : MonoBehaviour {
 		if (invincibility > 0){
 			invincibility--;
 		}
-		if (lives <= 0){
-			SceneManager.LoadSceneAsync("Game_Over");
+		if (lives <= 0 && alive){
+			StartCoroutine("GameOver");
+			alive = false;
 		}
+	}
+
+	IEnumerator GameOver() {
+		Instantiate(FXController.Instance.playerDeath,gameObject.transform.position,gameObject.transform.rotation);
+		yield return new WaitForSeconds(2);
+		SceneManager.LoadSceneAsync(3);
+		SoundsController.Instance.Play("Boo");
+		yield return null;
 	}
 
 	public void respawn(){

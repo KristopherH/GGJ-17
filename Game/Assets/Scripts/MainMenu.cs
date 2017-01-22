@@ -10,8 +10,7 @@ public class MainMenu : MonoBehaviour {
     // Update is called once per frame
     private bool clicked = false; 
     public float speed =  2.0f;
-    public GameObject menu;
-        public Text changeText;
+    public Text changeText;
     private int randomNum;
     public AudioSource playSound;
     void Start()
@@ -24,13 +23,13 @@ public class MainMenu : MonoBehaviour {
             switch (randomNum)
             {
                 case 0:
-                    changeText.text = "RUM IS GOOD";
+                    changeText.text = "Go Shawty \n It's sherbert day";
                     break;
                 case 1:
-                    changeText.text = "FEED ME";
+                    changeText.text = "Feed Me";
                     break;
                 case 2:
-                    changeText.text = "GET IN ME";
+                    changeText.text = "Wu Tang Flan";
                     break;
                 case 3:
                     changeText.text = "MEOW";
@@ -38,15 +37,30 @@ public class MainMenu : MonoBehaviour {
                 case 4:
                     changeText.text = "!Cake";
                     break;
+                case 5:
+                    changeText.text = "Blurred Limes";
+                    break;
+                case 6:
+                    changeText.text = "Send Foods";
+                    break;
+                case 7:
+                    changeText.text = "Robert Brownie Jr.";
+                    break;
+                case 8:
+                    changeText.text = "B*tch Peas";
+                    break;
             }
             
         }
    
 	}
+
     public void PlayButton_Click()
     {
         clicked = true;
         randomNum = Random.Range(0, 5);
+        SceneManager.LoadSceneAsync(2);
+
     }
     public void ExitButton_Click()
     {
@@ -54,12 +68,10 @@ public class MainMenu : MonoBehaviour {
     }
     public void TutorialButton_Click()
     {
-        SceneManager.LoadSceneAsync(2);
-    }
-
-    public void ChangetoScene ()
-    {
         SceneManager.LoadSceneAsync(1);
     }
-
+    public void HighScore_Click()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
 }
