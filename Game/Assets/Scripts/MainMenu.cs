@@ -44,11 +44,6 @@ public class MainMenu : MonoBehaviour {
     {
         clicked = true;
         randomNum = Random.Range(0, 5);
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
     }
     public void ExitButton_Click()
     {
