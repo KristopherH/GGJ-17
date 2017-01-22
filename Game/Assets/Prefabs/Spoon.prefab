@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.23, y: 4.83, z: -1.67}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 479340}
@@ -277,7 +277,7 @@ ParticleSystem:
     minMaxState: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 1
@@ -321,7 +321,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 0.1
+      scalar: 5.26
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -447,7 +447,7 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
+        rgba: 4294967292
       minMaxState: 0
     startSize:
       scalar: 0.15
@@ -459,14 +459,19 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
+        - time: 0.5949844
+          value: 0.700316
+          inSlope: -1.3926625
+          outSlope: -1.3926625
+          tangentMode: 0
         - time: 1
-          value: 1
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-        m_RotationOrder: 4
+        m_RotationOrder: 0
       minCurve:
         serializedVersion: 2
         m_Curve:
@@ -483,7 +488,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      minMaxState: 0
+      minMaxState: 1
     startRotationX:
       scalar: 0
       maxCurve:
@@ -618,7 +623,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -652,11 +657,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
       minMaxState: 0
-    cnt0: 30
+    cnt0: 500
     cnt1: 30
     cnt2: 30
     cnt3: 30
-    cntmax0: 30
+    cntmax0: 500
     cntmax1: 30
     cntmax2: 30
     cntmax3: 30
@@ -664,7 +669,7 @@ ParticleSystem:
     time1: 0
     time2: 0
     time3: 0
-    m_BurstCount: 0
+    m_BurstCount: 1
   SizeModule:
     enabled: 0
     curve:

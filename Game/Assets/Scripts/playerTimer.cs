@@ -17,7 +17,7 @@ public class playerTimer : MonoBehaviour {
     // Use this for initialization
     void Start() {
         startTime = Time.time;
-        totalTimePlayedText.gameObject.SetActive(false);
+		if(totalTimePlayedText != null) totalTimePlayedText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -57,6 +57,8 @@ public class playerTimer : MonoBehaviour {
         float t = Time.time - startTime;
         string fMinutes = ((int)t / 60).ToString();
         string fSeconds = (t % 60).ToString("f0");
-        totalTimePlayedText.text = fMinutes + ":" + fSeconds;
+		if (totalTimePlayedText == null)
+			return;
+		totalTimePlayedText.text = fMinutes + ":" + fSeconds;
     }    
 }
