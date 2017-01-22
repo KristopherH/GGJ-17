@@ -1260,46 +1260,10 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1337829552}
-    - target: {fileID: 8269810, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8275472, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8262856, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8294210, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8238292, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265606, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8273038, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8260002, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228508, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226216, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 11457684, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: playerDeath
+      value: 
+      objectReference: {fileID: 176314, guid: 5c8cb4faf1ae247d2ac1166e1a21129f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
   m_IsPrefabParent: 0
@@ -1808,10 +1772,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDoorAttackTime: 1
+  playerState: 0
   collectedEnemyType: 0
-  timer: 0
+  invincibilityTimer: 0
   projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
   spoonMode: {fileID: 1220321526}
+  scored: 0
 --- !u!114 &1337829564
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,6 +23,7 @@ public class ProjectileMovement : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Enemy"){
 			Instantiate (enemyDeath, other.transform.position, other.transform.rotation);
+			SoundsController.Instance.Play ("EnemyHit");
 			Destroy(other.gameObject);
 			Score.Instance.increaseScore(2);
 			life--;
