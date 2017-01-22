@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour {
 			invincibility--;
 		}
 		if (lives <= 0){
-			SceneManager.LoadSceneAsync("Game_Over");
+			SceneManager.LoadSceneAsync(3);
 		}
 	}
 
