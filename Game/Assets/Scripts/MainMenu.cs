@@ -10,8 +10,7 @@ public class MainMenu : MonoBehaviour {
     // Update is called once per frame
     private bool clicked = false; 
     public float speed =  2.0f;
-    public GameObject menu;
-        public Text changeText;
+    public Text changeText;
     private int randomNum;
     public AudioSource playSound;
     void Start()
@@ -43,10 +42,13 @@ public class MainMenu : MonoBehaviour {
         }
    
 	}
+
     public void PlayButton_Click()
     {
         clicked = true;
         randomNum = Random.Range(0, 5);
+        SceneManager.LoadSceneAsync(1);
+
     }
     public void ExitButton_Click()
     {
@@ -54,12 +56,10 @@ public class MainMenu : MonoBehaviour {
     }
     public void TutorialButton_Click()
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(1);
     }
-
-    public void ChangetoScene ()
+    public void HighScore_Click()
     {
         SceneManager.LoadSceneAsync(1);
     }
-
 }
