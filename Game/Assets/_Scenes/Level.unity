@@ -762,6 +762,46 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1337829552}
+    - target: {fileID: 8269810, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275472, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262856, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294210, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238292, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265606, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273038, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260002, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228508, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226216, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
   m_IsPrefabParent: 0
@@ -1172,6 +1212,10 @@ Prefab:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 1675055815}
+    - target: {fileID: 166282, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
     - {fileID: 6522540, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
