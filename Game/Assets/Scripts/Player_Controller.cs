@@ -60,7 +60,11 @@ public class Player_Controller : MonoBehaviour {
             }
         }
 
-        if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0) //Left
+        if (Input.GetKeyDown(KeyCode.S) || (Input.GetButtonDown("X/S") && !s_held)) s_held = true;
+        else if (Input.GetKeyUp(KeyCode.S) || (Input.GetButtonUp("X/S") && s_held)) s_held = false;
+        else if (Input.GetKey(KeyCode.S) || Input.GetButton("X/S")) s_held = true;
+        else if (s_held) s_held = false;
+        else if (Input.GetKey(KeyCode.A) || Input.GetAxis("Horizontal") < 0) //Left
         {
             if (ps == player_state.FACING_FORWARD && can_animate && p_standing_state == player_standing_state.STANDING_UP)
             {
@@ -98,11 +102,6 @@ public class Player_Controller : MonoBehaviour {
                 this.transform.Translate(speed * Time.deltaTime, 0, 0);
             }
         }
-
-        else if (Input.GetKeyDown(KeyCode.S) || (Input.GetButtonDown("X/S") && !s_held)) s_held = true;
-        else if (Input.GetKeyUp(KeyCode.S) || (Input.GetButtonUp("X/S") && s_held)) s_held = false;
-        else if (Input.GetKey(KeyCode.S) || Input.GetButton("X/S")) s_held = true;
-
 
         if (s_held && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
         {
