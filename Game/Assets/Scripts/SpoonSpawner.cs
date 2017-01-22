@@ -49,6 +49,8 @@ public class SpoonSpawner : MonoBehaviour {
 	void Spawn()
 	{
 		Debug.Log ("SPAWN");
+		if (spoons.Count > 0)
+			return;
 		startCookDelay = startCookDelay == maxCookDelay ? maxCookDelay : startCookDelay + 1;
 		cookCountDown = startCookDelay;
 		GameObject spoon = Instantiate (spoonPrefab, gameObject.transform.position, gameObject.transform.rotation) as GameObject;  

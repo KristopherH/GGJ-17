@@ -13,7 +13,9 @@ public class MainMenu : MonoBehaviour {
     public Text changeText;
     private int randomNum;
     public AudioSource playSound;
-
+    void Start()
+    {
+    }
     void Update () {
         if (clicked == true)
         {
@@ -40,17 +42,24 @@ public class MainMenu : MonoBehaviour {
         }
    
 	}
+
     public void PlayButton_Click()
     {
         clicked = true;
         randomNum = Random.Range(0, 5);
+        SceneManager.LoadSceneAsync(2);
+
     }
     public void ExitButton_Click()
     {
 		Application.Quit();
     }
-    public void ChangetoScene (int changeScene)
+    public void TutorialButton_Click()
     {
-        SceneManager.LoadSceneAsync(changeScene);
+        SceneManager.LoadSceneAsync(1);
+    }
+    public void HighScore_Click()
+    {
+        SceneManager.LoadSceneAsync(4);
     }
 }

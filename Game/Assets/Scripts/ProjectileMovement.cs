@@ -6,8 +6,11 @@ public class ProjectileMovement : MonoBehaviour {
 	public Vector3 direction;
 	public int life;
 
+	GameObject enemyDeath;
+
 	// Use this for initialization
 	void Start () {
+		enemyDeath = FXController.Instance.enemyDeath;
 		life = 3;
 	}
 	
@@ -19,7 +22,9 @@ public class ProjectileMovement : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Enemy"){
+			Instantiate (enemyDeath, other.transform.position, other.transform.rotation);
 			Destroy(other.gameObject);
+			Score.Instance.increaseScore(2);
 			life--;
 			if (life <= 0){
 				Destroy(this.gameObject);

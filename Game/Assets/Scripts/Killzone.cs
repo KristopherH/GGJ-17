@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Killzone : MonoBehaviour {
 
+	public GameObject player;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -14,8 +16,8 @@ public class Killzone : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		if (other.name == "Player_Master"){
-			other.gameObject.GetComponent<PlayerHealth>().respawn();
+		if (other.tag == "Player"){
+			player.GetComponent<PlayerHealth>().lives = 0;
 		} else if(other.tag == "Enemy"){
 			Destroy(other.gameObject);
 		}
