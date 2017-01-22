@@ -4,6 +4,7 @@ using System.Collections;
 public class SpoonMode : MonoBehaviour {
 
 	[SerializeField] float modeLength;
+	[SerializeField] GameObject endParticles;
 	float timer;
 
 	PlayerAttack pa;
@@ -34,6 +35,7 @@ public class SpoonMode : MonoBehaviour {
 	void TimeExpired()
 	{
 		this.gameObject.SetActive (false);
+		Instantiate (endParticles, transform.position, transform.rotation);
 		//Death effect
 		//GetComponentInParent<PlayerHealth> ().Kill();
 	}
