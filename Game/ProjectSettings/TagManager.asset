@@ -9,6 +9,7 @@ TagManager:
   - PlatformLimit
   - Enemy
   - DoorActive
+  - Spoon
   layers:
   - Default
   - TransparentFX

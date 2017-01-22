@@ -1016,6 +1016,7 @@ MonoBehaviour:
   collectedEnemyType: 0
   timer: 0
   projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
+  spoonMode: {fileID: 0}
 --- !u!114 &1337829558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,6 +1217,14 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11459428, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: spoonMode
+      value: 
+      objectReference: {fileID: 1220321526}
+    - target: {fileID: 11467376, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: spoonMode
+      value: 
+      objectReference: {fileID: 1220321526}
     m_RemovedComponents:
     - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
     - {fileID: 6522540, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
