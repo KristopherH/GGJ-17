@@ -78,8 +78,10 @@
     <Compile Include="Assets\Scripts\Player_Grounded.cs" />
     <Compile Include="Assets\Scripts\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\PopCorn.cs" />
+    <Compile Include="Assets\Scripts\ProjectileMovement.cs" />
     <Compile Include="Assets\Scripts\Rotate.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\SoundsController.cs" />
     <Compile Include="Assets\Scripts\SpoonSpawner.cs" />
     <Compile Include="Assets\Scripts\_Deprecated\PlayerController.cs" />
     <Compile Include="Assets\Scripts\pauseMenuScript1.cs" />

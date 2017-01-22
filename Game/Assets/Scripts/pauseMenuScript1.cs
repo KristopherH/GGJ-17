@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pauseMenuScript1 : MonoBehaviour {
+public class pauseMenuScript1 : MonoBehaviour
+{
 
     public GameObject PauseUI;
     public GameObject enemyStats;
@@ -10,10 +11,8 @@ public class pauseMenuScript1 : MonoBehaviour {
 
     void Start()
     {
-		if(PauseUI == null) PauseUI = new GameObject ();
-		PauseUI.SetActive(false);
-		if (enemyStats == null)	enemyStats = new GameObject ();
-		enemyStats.SetActive (false);
+        PauseUI.SetActive(false);
+        enemyStats.SetActive(false);
     }
 
     void Update()
@@ -22,13 +21,15 @@ public class pauseMenuScript1 : MonoBehaviour {
         {
             paused = !paused;
         }
+
         if (paused)
         {
             PauseUI.SetActive(true);
             enemyStats.SetActive(true);
             Time.timeScale = 0;
         }
-        if(!paused)
+
+        if (!paused)
         {
             PauseUI.SetActive(false);
             enemyStats.SetActive(false);

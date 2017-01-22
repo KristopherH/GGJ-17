@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour {
 	void Start () {
 		playerState = STATE.OPEN;
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+		SoundsController.Instance.Play("GameStart");
 		door = GameObject.Find ("Door");
 	}
 	
@@ -61,13 +62,16 @@ public class PlayerAttack : MonoBehaviour {
 			collectedEnemyType = enemy.GetComponent<EnemyController>().type;
 			playerState = STATE.COOKING;
 			GameObject.Find("DoorHinge").GetComponent<DoorController>().Eat();
+			SoundsController.Instance.Play("MicrowaveDoorClose");
 			switch(collectedEnemyType){
 			case 0:
-				GetComponent<playerTimer>().setCookingTimer(3.0f);
+				GetComponent<playerTimer>().setCookingTimer(6.0f);
+				SoundsController.Instance.Play("MicrowaveCook");
 				scored = false;
 				break;
 			case 1:
-				GetComponent<playerTimer>().setCookingTimer(6.0f);
+				GetComponent<playerTimer>().setCookingTimer(3.0f);
+				SoundsController.Instance.Play("MicrowaveCook");
 				scored = false;
 				break;
 			case 2:
@@ -80,6 +84,7 @@ public class PlayerAttack : MonoBehaviour {
 		case STATE.COOKING:
 			//GetComponent<PlayerHealth>().respawn();
 			GetComponent<PlayerHealth>().lives = 0;
+			SoundsController.Instance.Play("MicrowaveBad");
 			playerState = STATE.OPEN;
 			break;
 		case STATE.INVINCIBLE:
@@ -94,19 +99,33 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void Shoot(){
-		//GameObject projectile;
-		//projectile = Instantiate(projectileBP);
-		//projectile.transform.position = transform.position;
-		//projectile.GetComponent<projectileMovement>().direction = new Vector3(
+		GameObject projectile;
+		projectile = Instantiate(projectileBP);
+		projectile.transform.position = transform.position;
+		switch(GetComponent<Player_Controller>().ps){
+		case Player_Controller.player_state.FACING_LEFT:
+			projectile.GetComponent<ProjectileMovement>().direction = new Vector3(-10, 0, 0);
+			break;
+		case Player_Controller.player_state.FACING_RIGHT:
+			projectile.GetComponent<ProjectileMovement>().direction = new Vector3(10, 0, 0);
+			break;
+		default:
+			Destroy(projectile);
+			break;
+		}
 	}
 
 	void SuccessfulCook(){
 		GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+		SoundsController.Instance.Play("PING");
+		SoundsController.Instance.Play("MicrowaveDoorOpen");
 		//				doorTimer = activeDoorAttackTime;
 		//				door.tag = "DoorActive";
 		//				StartCoroutine ("DoorAttackTimer");
-		Shoot();
+		if (collectedEnemyType == 0){
+			Shoot();
+		}
 
 		if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
 			GetComponent<Rigidbody>().AddForce(new Vector3(0, 600, 0));

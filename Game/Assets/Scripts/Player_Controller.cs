@@ -101,6 +101,7 @@ public class Player_Controller : MonoBehaviour {
 
         else if (Input.GetKeyDown(KeyCode.S) || (Input.GetButtonDown("X/S") && !s_held)) s_held = true;
         else if (Input.GetKeyUp(KeyCode.S) || (Input.GetButtonUp("X/S") && s_held)) s_held = false;
+        else if (Input.GetKey(KeyCode.S) || Input.GetButton("X/S")) s_held = true;
 
 
         if (s_held && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
@@ -110,18 +111,21 @@ public class Player_Controller : MonoBehaviour {
                 player_ani.Play("Forward_To_Down");
                 p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
             else if (ps == player_state.FACING_LEFT)
             {
                 player_ani.Play("Left_To_Down");
                 p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
             else if (ps == player_state.FACING_RIGHT)
             {
                 player_ani.Play("Right_To_Down");
                 p_standing_state = player_standing_state.LAYING_DOWN;
                 can_animate = false;
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
         }
         else if (!s_held && can_animate && p_standing_state == player_standing_state.LAYING_DOWN) //Up
@@ -134,6 +138,7 @@ public class Player_Controller : MonoBehaviour {
                 ps = player_state.FACING_FORWARD;
                 p_standing_state = player_standing_state.STANDING_UP;
                 can_animate = false;
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
             else if (ps == player_state.FACING_LEFT)
             {
@@ -142,6 +147,7 @@ public class Player_Controller : MonoBehaviour {
                 ps = player_state.FACING_LEFT;
                 p_standing_state = player_standing_state.STANDING_UP;
                 can_animate = false;
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
             else if (ps == player_state.FACING_RIGHT)
             {
@@ -150,6 +156,7 @@ public class Player_Controller : MonoBehaviour {
                 ps = player_state.FACING_RIGHT;
                 p_standing_state = player_standing_state.STANDING_UP;
                 can_animate = false;
+				SoundsController.Instance.Play("MicrowaveFlip");
             }
         }
 
@@ -189,6 +196,7 @@ public class Player_Controller : MonoBehaviour {
             ps = player_state.FACING_FORWARD;
             p_standing_state = player_standing_state.STANDING_UP;
             can_animate = false;
+			SoundsController.Instance.Play("MicrowaveFlip");
         }
         else if (ps == player_state.FACING_LEFT)
         {
@@ -197,6 +205,7 @@ public class Player_Controller : MonoBehaviour {
             ps = player_state.FACING_LEFT;
             p_standing_state = player_standing_state.STANDING_UP;
             can_animate = false;
+			SoundsController.Instance.Play("MicrowaveFlip");
         }
         else if (ps == player_state.FACING_RIGHT)
         {
@@ -205,6 +214,7 @@ public class Player_Controller : MonoBehaviour {
             ps = player_state.FACING_RIGHT;
             p_standing_state = player_standing_state.STANDING_UP;
             can_animate = false;
+			SoundsController.Instance.Play("MicrowaveFlip");
         }
     }
 }
