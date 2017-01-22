@@ -45,8 +45,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FireExplosionVFX\Scripts\FxSplash.cs" />
+     <Compile Include="Assets\FireExplosionVFX\Scripts\GOflashText.cs" />
+     <Compile Include="Assets\FireExplosionVFX\Scripts\LaunchEffect.cs" />
      <Compile Include="Assets\Scripts\BackgroundController.cs" />
      <Compile Include="Assets\Scripts\DestroyOnImpactWithTag.cs" />
+     <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
      <Compile Include="Assets\Scripts\DoorController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EnemyLayerIgnore.cs" />
@@ -54,6 +58,7 @@
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyTriggerCollider.cs" />
      <Compile Include="Assets\Scripts\FollowPlayer.cs" />
+     <Compile Include="Assets\Scripts\GOMenuScript.cs" />
      <Compile Include="Assets\Scripts\HighScore_Manager.cs" />
      <Compile Include="Assets\Scripts\Killzone.cs" />
      <Compile Include="Assets\Scripts\LivesDisplay.cs" />
@@ -70,10 +75,11 @@
      <Compile Include="Assets\Scripts\SoundsController.cs" />
      <Compile Include="Assets\Scripts\SpoonMode.cs" />
      <Compile Include="Assets\Scripts\SpoonSpawner.cs" />
+     <Compile Include="Assets\Scripts\Vibrate.cs" />
      <Compile Include="Assets\Scripts\_Deprecated\PlayerController.cs" />
      <Compile Include="Assets\Scripts\pauseMenuScript1.cs" />
      <Compile Include="Assets\Scripts\playerTimer.cs" />
-     <Compile Include="Assets\Vibrate.cs" />
+     <Compile Include="Assets\backScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
