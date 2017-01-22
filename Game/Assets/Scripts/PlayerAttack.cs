@@ -65,12 +65,12 @@ public class PlayerAttack : MonoBehaviour {
 			SoundsController.Instance.Play("MicrowaveDoorClose");
 			switch(collectedEnemyType){
 			case 0:
-				GetComponent<playerTimer>().setCookingTimer(3.0f);
+				GetComponent<playerTimer>().setCookingTimer(6.0f);
 				SoundsController.Instance.Play("MicrowaveCook");
 				scored = false;
 				break;
 			case 1:
-				GetComponent<playerTimer>().setCookingTimer(6.0f);
+				GetComponent<playerTimer>().setCookingTimer(3.0f);
 				SoundsController.Instance.Play("MicrowaveCook");
 				scored = false;
 				break;

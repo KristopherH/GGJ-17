@@ -14,12 +14,16 @@ public class ProjectileMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position += direction*Time.deltaTime;
+		transform.Rotate(new Vector3(0, 2, 0));
 	}
 
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Enemy"){
 			Destroy(other.gameObject);
 			life--;
+			if (life <= 0){
+				Destroy(this.gameObject);
+			}
 		}
 	}
 }
