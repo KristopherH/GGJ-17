@@ -123,7 +123,9 @@ public class PlayerAttack : MonoBehaviour {
 		//				doorTimer = activeDoorAttackTime;
 		//				door.tag = "DoorActive";
 		//				StartCoroutine ("DoorAttackTimer");
-		Shoot();
+		if (collectedEnemyType == 0){
+			Shoot();
+		}
 
 		if (GetComponent<Player_Controller>().p_standing_state == Player_Controller.player_standing_state.LAYING_DOWN){
 			GetComponent<Rigidbody>().AddForce(new Vector3(0, 600, 0));
