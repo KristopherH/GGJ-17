@@ -101,6 +101,7 @@ public class Player_Controller : MonoBehaviour {
 
         else if (Input.GetKeyDown(KeyCode.S) || (Input.GetButtonDown("X/S") && !s_held)) s_held = true;
         else if (Input.GetKeyUp(KeyCode.S) || (Input.GetButtonUp("X/S") && s_held)) s_held = false;
+        else if (Input.GetKey(KeyCode.S) || Input.GetButton("X/S")) s_held = true;
 
 
         if (s_held && can_animate && p_standing_state == player_standing_state.STANDING_UP) //Down
