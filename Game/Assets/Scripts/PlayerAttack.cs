@@ -18,11 +18,12 @@ public class PlayerAttack : MonoBehaviour {
 	[SerializeField] GameObject projectileBP;
 	[SerializeField] GameObject spoonMode;
 
-	[SerializeField] bool scored = true;
+	[SerializeField] bool scored;
 	GameObject door;
 
 	// Use this for initialization
 	void Start () {
+		scored = true;
 		playerState = STATE.OPEN;
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
 		SoundsController.Instance.Play("GameStart");
@@ -52,7 +53,7 @@ public class PlayerAttack : MonoBehaviour {
 //	}
 
 	void OnCollisionEnter (Collision collision){
-		if (collision.gameObject.tag == "Enemy") {
+		if (collision.gameObject.layer == 20) {
 			EnemyCollision (collision.gameObject);
 		} else if (collision.gameObject.tag == "Spoon") {
 			SpoonCollision ();
@@ -72,7 +73,7 @@ public class PlayerAttack : MonoBehaviour {
 			break;
 		case STATE.OPEN:
 			CollectEnemy(enemy);
-			InvincibleFor(0.5f);
+			//InvincibleFor(0.5f);
 			Debug.Log("Start cooking");
 			Destroy(enemy);
 			break;
@@ -84,6 +85,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void InvincibleFor(float seconds){
+		SetInvincible(true);
 		invincibilityTimer = seconds;
 		StartCoroutine("InvincibleTimer");
 	}
@@ -91,7 +93,7 @@ public class PlayerAttack : MonoBehaviour {
 	IEnumerable InvincibleTimer(){
 	if (invincibilityTimer > 0.0f) {
 		invincibilityTimer -= Time.deltaTime;
-		if (invincibilityTimer <= 0.0f) 
+		if (invincibilityTimer <= 0.0f)
 			{
 				SetInvincible(false);
 			}
