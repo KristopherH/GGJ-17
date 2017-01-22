@@ -41,7 +41,9 @@ public class Player_Controller : MonoBehaviour {
 	
 	void Update ()
     {
-        Movement();
+		if (GetComponent<PlayerHealth>().lives > 0){
+        	Movement();
+		}
 	}
 
 
@@ -161,8 +163,8 @@ public class Player_Controller : MonoBehaviour {
 
         if ((Input.GetKey(KeyCode.Space) || Input.GetAxis("A/X") == 1) && player_grounded)
         {
-			GetComponent<Rigidbody>().AddForce(new Vector3(0, 150, 0));
-
+			GetComponent<Rigidbody>().AddForce(new Vector3(0, 300, 0));
+			player_grounded = false;
             //this.transform.Translate(this.transform.position + new Vector3(0, 1, 0));
         }
     }

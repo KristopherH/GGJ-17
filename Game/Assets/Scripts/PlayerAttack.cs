@@ -32,11 +32,13 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GetComponent<playerTimer>().cTimer <= 0){
-			playerState = STATE.OPEN;
-			if (!scored){
-				SuccessfulCook();
-				scored = true;
+		if (GetComponent<PlayerHealth>().lives > 0){
+			if (GetComponent<playerTimer>().cTimer <= 0){
+				playerState = STATE.OPEN;
+				if (!scored){
+					SuccessfulCook();
+					scored = true;
+				}
 			}
 		}
 	}
@@ -53,10 +55,12 @@ public class PlayerAttack : MonoBehaviour {
 //	}
 
 	void OnCollisionEnter (Collision collision){
-		if (collision.gameObject.layer == 20) {
-			EnemyCollision (collision.gameObject);
-		} else if (collision.gameObject.tag == "Spoon") {
-			SpoonCollision ();
+		if (GetComponent<PlayerHealth>().lives > 0){
+			if (collision.gameObject.layer == 20) {
+				EnemyCollision (collision.gameObject);
+			} else if (collision.gameObject.tag == "Spoon") {
+				SpoonCollision ();
+			}
 		}
 	}
 
@@ -91,14 +95,8 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	IEnumerable InvincibleTimer(){
-	if (invincibilityTimer > 0.0f) {
-		invincibilityTimer -= Time.deltaTime;
-		if (invincibilityTimer <= 0.0f)
-			{
-				SetInvincible(false);
-			}
-		}			
-		yield return null;
+		yield return new WaitForSeconds(invincibilityTimer);
+		SetInvincible(false);
 	}
 
 	public float GetAttackPower()

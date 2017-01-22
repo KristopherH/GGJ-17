@@ -20,8 +20,14 @@ public class PlayerHealth : MonoBehaviour {
 			invincibility--;
 		}
 		if (lives <= 0){
-			SceneManager.LoadSceneAsync(3);
+			StartCoroutine("GameOver");
 		}
+	}
+
+	IEnumerator GameOver() {
+		yield return new WaitForSeconds(2);
+		SceneManager.LoadSceneAsync(3);
+		yield return null;
 	}
 
 	public void respawn(){
