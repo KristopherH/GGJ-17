@@ -29,7 +29,7 @@ public class SoundsController : MonoBehaviour {
 	public void Play(string name){
 		foreach (AudioSource sound in sounds){
 			if (sound.gameObject.name == name){
-				sound.PlayOneShot();
+				sound.Play();
 			}
 		}
 	}
