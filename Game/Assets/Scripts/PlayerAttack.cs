@@ -116,6 +116,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void SuccessfulCook(){
+		SpoonSpawner.Instance.RegisterCook ();
 		GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
 		SoundsController.Instance.Play("PING");
