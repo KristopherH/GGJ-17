@@ -546,7 +546,7 @@ Transform:
   m_PrefabParentObject: {fileID: 436452, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 231690508}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0.7071069, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1259,7 +1259,7 @@ Prefab:
     - target: {fileID: 11407960, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1337829552}
+      objectReference: {fileID: 1543604616}
     - target: {fileID: 8269810, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -1300,6 +1300,10 @@ Prefab:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11407960, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: enemies
+      value: 
+      objectReference: {fileID: 1075353198}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
   m_IsPrefabParent: 0
@@ -1361,6 +1365,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27a255eb3842f4c68aa325ffb19bed28, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1075353198 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 189092, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
+  m_PrefabInternal: {fileID: 1481407884}
 --- !u!1 &1082737325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1471,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: -0.10496367, y: 2.7950516, z: 1}
   m_Center: {x: -0.55248284, y: 0.8975258, z: 0}
+--- !u!4 &1205688982 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 426990, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
+  m_PrefabInternal: {fileID: 1481407884}
 --- !u!1 &1220321526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,10 +1820,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDoorAttackTime: 1
+  playerState: 0
   collectedEnemyType: 0
-  timer: 0
+  invincibilityTimer: 0
   projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
   spoonMode: {fileID: 1220321526}
+  scored: 0
 --- !u!114 &1337829564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1994,6 +2008,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2341424, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 1205688982}
+    - target: {fileID: 2374150, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 1205688982}
+    - target: {fileID: 2351842, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 1205688982}
+    - target: {fileID: 2399892, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 1205688982}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1e4cc08e520848f2b617dc9eba13b94, type: 2}
   m_IsPrefabParent: 0
