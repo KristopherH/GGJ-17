@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour {
 	void Start () {
 		playerState = STATE.OPEN;
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+		SoundsController.Instance.Play("GameStart");
 		door = GameObject.Find ("Door");
 	}
 	
@@ -61,13 +62,16 @@ public class PlayerAttack : MonoBehaviour {
 			collectedEnemyType = enemy.GetComponent<EnemyController>().type;
 			playerState = STATE.COOKING;
 			GameObject.Find("DoorHinge").GetComponent<DoorController>().Eat();
+			SoundsController.Instance.Play("MicrowaveDoorClose");
 			switch(collectedEnemyType){
 			case 0:
 				GetComponent<playerTimer>().setCookingTimer(3.0f);
+				SoundsController.Instance.Play("MicrowaveCook");
 				scored = false;
 				break;
 			case 1:
 				GetComponent<playerTimer>().setCookingTimer(6.0f);
+				SoundsController.Instance.Play("MicrowaveCook");
 				scored = false;
 				break;
 			case 2:
@@ -80,6 +84,7 @@ public class PlayerAttack : MonoBehaviour {
 		case STATE.COOKING:
 			//GetComponent<PlayerHealth>().respawn();
 			GetComponent<PlayerHealth>().lives = 0;
+			SoundsController.Instance.Play("MicrowaveBad");
 			playerState = STATE.OPEN;
 			break;
 		case STATE.INVINCIBLE:
@@ -103,6 +108,8 @@ public class PlayerAttack : MonoBehaviour {
 	void SuccessfulCook(){
 		GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
+		SoundsController.Instance.Play("PING");
+		SoundsController.Instance.Play("MicrowaveDoorOpen");
 		//				doorTimer = activeDoorAttackTime;
 		//				door.tag = "DoorActive";
 		//				StartCoroutine ("DoorAttackTimer");
