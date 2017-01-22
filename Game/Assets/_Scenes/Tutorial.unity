@@ -662,13 +662,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GOALS!!!
+  m_Text: GOALS!!
 --- !u!222 &814753664
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -738,10 +738,18 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: COOK AS MUCH FOOD AS POSSIBLE, WHILST DOGING SPOONS AND EXTRA FOOD
+  m_Text: '1. Get Food
+
+    2. Cook Food
+
+    3. Shoot Food
+
+    4. Get Score
+
+'
 --- !u!222 &1012966238
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1247,7 +1255,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -85, y: -64}
+  m_AnchoredPosition: {x: -75, y: -86}
   m_SizeDelta: {x: 450, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1350255817
@@ -1714,7 +1722,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 255, y: 26}
+  m_AnchoredPosition: {x: 254, y: 15}
   m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1713829392
@@ -1746,10 +1754,11 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: SURVIVE AS LONG AS POSSIBLE AND TRY AND ACHIEVE THE HIGHEST SCORE!!
+  m_Text: "Tip - Microwave a spoon \nfor short period of EXPLOSIVE\n invincibility!\n\nDisclamer:
+    (Just not in real life)"
 --- !u!222 &1713829393
 CanvasRenderer:
   m_ObjectHideFlags: 0
