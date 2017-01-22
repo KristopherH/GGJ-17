@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour {
     {
         clicked = true;
         randomNum = Random.Range(0, 5);
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
 
     }
     public void ExitButton_Click()
@@ -60,6 +60,6 @@ public class MainMenu : MonoBehaviour {
     }
     public void HighScore_Click()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(4);
     }
 }
