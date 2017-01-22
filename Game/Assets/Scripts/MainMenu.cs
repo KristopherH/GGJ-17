@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
@@ -11,6 +12,7 @@ public class MainMenu : MonoBehaviour {
     public float speed =  2.0f;
     public Text changeText;
     private int randomNum;
+    public AudioSource playSound;
 
     void Update () {
         if (clicked == true)
@@ -42,7 +44,12 @@ public class MainMenu : MonoBehaviour {
     {
         clicked = true;
         randomNum = Random.Range(0, 5);
+        playSound.Play();
 
+    }
+    public void ExitButton_Click()
+    {
+        playSound.Play();
     }
     public void ChangetoScene (int changeScene)
     {

@@ -1071,6 +1071,7 @@ MonoBehaviour:
   activeDoorAttackTime: 1
   collectedEnemyType: 0
   timer: 0
+  projectileBP: {fileID: 0}
 --- !u!114 &1337829558
 MonoBehaviour:
   m_ObjectHideFlags: 0
