@@ -14,8 +14,8 @@ public class PlayerAttack : MonoBehaviour {
 
 	[SerializeField] int collectedEnemyType;
 	[SerializeField] int timer;
-
 	[SerializeField] GameObject projectileBP;
+	[SerializeField] GameObject spoonMode;
 
 	bool scored = true;
 	GameObject door;
@@ -51,8 +51,10 @@ public class PlayerAttack : MonoBehaviour {
 //	}
 
 	void OnCollisionEnter (Collision collision){
-		if (collision.gameObject.tag == "Enemy"){
-			EnemyCollision(collision.gameObject);
+		if (collision.gameObject.tag == "Enemy") {
+			EnemyCollision (collision.gameObject);
+		} else if (collision.gameObject.tag == "Spoon") {
+			SpoonCollision ();
 		}
 	}
 
@@ -66,12 +68,12 @@ public class PlayerAttack : MonoBehaviour {
 			switch(collectedEnemyType){
 			case 0:
 				GetComponent<playerTimer>().setCookingTimer(6.0f);
-				SoundsController.Instance.Play("MicrowaveCook");
+				SoundsController.Instance.StartLoop("MicrowaveCook");
 				scored = false;
 				break;
 			case 1:
 				GetComponent<playerTimer>().setCookingTimer(3.0f);
-				SoundsController.Instance.Play("MicrowaveCook");
+				SoundsController.Instance.StartLoop("MicrowaveCook");
 				scored = false;
 				break;
 			case 2:
@@ -85,9 +87,11 @@ public class PlayerAttack : MonoBehaviour {
 			//GetComponent<PlayerHealth>().respawn();
 			GetComponent<PlayerHealth>().lives = 0;
 			SoundsController.Instance.Play("MicrowaveBad");
+			SoundsController.Instance.StopLoop("MicrowaveCook");
 			playerState = STATE.OPEN;
 			break;
 		case STATE.INVINCIBLE:
+			Score.Instance.increaseScore ();
 			Destroy(enemy);
 			break;
 		}
@@ -116,10 +120,12 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void SuccessfulCook(){
+		SpoonSpawner.Instance.RegisterCook ();
 		GameObject.Find("UI").GetComponent<Score>().increaseScore((collectedEnemyType+1)*10);
 		GameObject.Find("DoorHinge").GetComponent<DoorController>().FinishCook();
 		SoundsController.Instance.Play("PING");
 		SoundsController.Instance.Play("MicrowaveDoorOpen");
+		SoundsController.Instance.StopLoop("MicrowaveCook");
 		//				doorTimer = activeDoorAttackTime;
 		//				door.tag = "DoorActive";
 		//				StartCoroutine ("DoorAttackTimer");
@@ -131,6 +137,17 @@ public class PlayerAttack : MonoBehaviour {
 			GetComponent<Rigidbody>().AddForce(new Vector3(0, 600, 0));
 			GetComponent<Player_Controller>().FaceUp();
 		}
+	}
+
+	void SpoonCollision()
+	{
+		spoonMode.SetActive (true);
+		playerState = STATE.INVINCIBLE;
+		GameObject.Find("DoorHinge").GetComponent<DoorController>().Eat();
+		SoundsController.Instance.Play("MicrowaveDoorClose");
+		GetComponent<playerTimer>().setCookingTimer(10.0f);
+		SoundsController.Instance.StartLoop("MicrowaveCook");
+		scored = false;
 	}
 
 	public void SetInvincible(bool invin){

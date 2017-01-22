@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		spawnTimer = 50;
+		spawnTimer = 0;
 		enemies = new ArrayList();
 	}
 	

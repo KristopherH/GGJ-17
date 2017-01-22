@@ -48,7 +48,7 @@ GameObject:
   - 114: {fileID: 11443672}
   m_Layer: 20
   m_Name: Spoon
-  m_TagString: Enemy
+  m_TagString: Spoon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   type: 1
   moveDirection: {x: 1, y: 0, z: 0}
   speed: 999
+  life_time: 0
   grounded: 0
 --- !u!114 &11499056
 MonoBehaviour:

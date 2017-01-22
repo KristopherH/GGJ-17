@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class SpoonSpawner : MonoBehaviour {
 	
@@ -23,6 +24,8 @@ public class SpoonSpawner : MonoBehaviour {
 	int maxCookDelay;
 
 	int cookCountDown;
+
+	ArrayList spoons = new ArrayList();
 
 	// Use this for initialization
 	void Start () {
@@ -48,6 +51,15 @@ public class SpoonSpawner : MonoBehaviour {
 		Debug.Log ("SPAWN");
 		startCookDelay = startCookDelay == maxCookDelay ? maxCookDelay : startCookDelay + 1;
 		cookCountDown = startCookDelay;
-		Instantiate (spoonPrefab, gameObject.transform.position, gameObject.transform.rotation);  
+		GameObject spoon = Instantiate (spoonPrefab, gameObject.transform.position, gameObject.transform.rotation) as GameObject;  
+		spoons.Add (spoon);
+	}
+
+	public void DestroyAllSpoons()
+	{
+		foreach (GameObject spoon in spoons) 
+		{
+			GameObject.Destroy (spoon);
+		}
 	}
 }

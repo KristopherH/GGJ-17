@@ -4,16 +4,18 @@ using System.Collections;
 public class SpoonMode : MonoBehaviour {
 
 	[SerializeField] float modeLength;
+	[SerializeField] GameObject endParticles;
 	float timer;
 
 	PlayerAttack pa;
 
-	// Use this for initialization
-	void Start () 
+	void OnEnable()
 	{
+		pa = GetComponentInParent<PlayerAttack> ();
 		timer = modeLength;
 		Player_Controller pc = GetComponentInParent<Player_Controller> ();
-		//pa.SetInvincible (true);
+		SpoonSpawner.Instance.DestroyAllSpoons ();
+		pa.SetInvincible (true);
 	}
 	
 	// Update is called once per frame
@@ -26,12 +28,14 @@ public class SpoonMode : MonoBehaviour {
 
 	void ReleaseSpoon()
 	{
-		//pa.SetInvincible (false);
+		pa.SetInvincible (false);
 		this.gameObject.SetActive (false);
 	}
 
 	void TimeExpired()
 	{
+		this.gameObject.SetActive (false);
+		Instantiate (endParticles, transform.position, transform.rotation);
 		//Death effect
 		//GetComponentInParent<PlayerHealth> ().Kill();
 	}
