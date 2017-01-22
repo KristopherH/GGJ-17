@@ -82,6 +82,7 @@ public class PlayerAttack : MonoBehaviour {
 			Destroy(enemy);
 			break;
 		case STATE.INVINCIBLE:
+			SoundsController.Instance.Play("Gulp");
 			Score.Instance.increaseScore();
 			Destroy(enemy);
 			break;

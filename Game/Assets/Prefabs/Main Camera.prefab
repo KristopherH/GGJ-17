@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &101074
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 485484}
+  - 82: {fileID: 8241426}
+  m_Layer: 0
+  m_Name: MicrowaveBad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &102386
 GameObject:
   m_ObjectHideFlags: 1
@@ -409,7 +425,7 @@ GameObject:
   - 4: {fileID: 475694}
   - 82: {fileID: 8262856}
   m_Layer: 0
-  m_Name: MicrowaveBad
+  m_Name: Gulp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -767,7 +783,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 498866}
-  m_RootOrder: 2
+  m_RootOrder: 13
 --- !u!4 &476536
 Transform:
   m_ObjectHideFlags: 1
@@ -794,6 +810,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 498866}
   m_RootOrder: 7
+--- !u!4 &485484
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 498866}
+  m_RootOrder: 2
 --- !u!4 &488002
 Transform:
   m_ObjectHideFlags: 1
@@ -831,7 +859,7 @@ Transform:
   m_Children:
   - {fileID: 488002}
   - {fileID: 475484}
-  - {fileID: 475694}
+  - {fileID: 485484}
   - {fileID: 466902}
   - {fileID: 405782}
   - {fileID: 499404}
@@ -842,6 +870,7 @@ Transform:
   - {fileID: 407140}
   - {fileID: 441646}
   - {fileID: 443574}
+  - {fileID: 475694}
   m_Father: {fileID: 435224}
   m_RootOrder: 2
 --- !u!4 &499404
@@ -1543,6 +1572,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &8241426
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 101074}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: aa563feb603424845b3e459251432f66, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &8260002
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1626,7 +1729,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: aa563feb603424845b3e459251432f66, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e45c303c949dd4fa4bd1e8a130b6ee2e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2340,6 +2443,7 @@ MonoBehaviour:
   PauseUI: {fileID: 0}
   enemyStat: {fileID: 135520}
   player: {fileID: 0}
+  enemies: {fileID: 0}
   paused: 0
 --- !u!114 &11457684
 MonoBehaviour:
@@ -2353,7 +2457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDeath: {fileID: 186392, guid: b07670f3fa1bd41f790d402cf0a6d2bf, type: 2}
-  playerDeath: {fileID: 186392, guid: b07670f3fa1bd41f790d402cf0a6d2bf, type: 2}
+  playerDeath: {fileID: 176314, guid: 5c8cb4faf1ae247d2ac1166e1a21129f, type: 2}
 --- !u!114 &11464026
 MonoBehaviour:
   m_ObjectHideFlags: 1
