@@ -99,10 +99,17 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void Shoot(){
-		//GameObject projectile;
-		//projectile = Instantiate(projectileBP);
-		//projectile.transform.position = transform.position;
-		//projectile.GetComponent<projectileMovement>().direction = new Vector3(
+		GameObject projectile;
+		projectile = Instantiate(projectileBP);
+		projectile.transform.position = transform.position;
+		switch(GetComponent<Player_Controller>().ps){
+		case Player_Controller.player_state.FACING_LEFT:
+			projectile.GetComponent<ProjectileMovement>().direction = new Vector3(-10, 0, 0);
+			break;
+		case Player_Controller.player_state.FACING_RIGHT:
+			projectile.GetComponent<ProjectileMovement>().direction = new Vector3(10, 0, 0);
+			break;
+		}
 	}
 
 	void SuccessfulCook(){
