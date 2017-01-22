@@ -49,10 +49,10 @@ public class MainMenu : MonoBehaviour {
     }
     public void ExitButton_Click()
     {
-        playSound.Play();
+		Application.Quit();
     }
     public void ChangetoScene (int changeScene)
     {
-        SceneManager.LoadScene(changeScene);
+        SceneManager.LoadSceneAsync(changeScene);
     }
 }

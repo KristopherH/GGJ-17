@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class pauseMenuScript1 : MonoBehaviour
 {
@@ -52,15 +53,15 @@ public class pauseMenuScript1 : MonoBehaviour
     }
     public void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
+		SceneManager.LoadSceneAsync(1);
     }
     public void MainMenu()
     {
-        Application.LoadLevel(1);
+		SceneManager.LoadSceneAsync(0);
     }
     public void Quit()
     {
-        Application.Quit();
+		Application.Quit();
     }
 
 }
