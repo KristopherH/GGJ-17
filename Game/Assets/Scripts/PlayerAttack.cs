@@ -14,7 +14,6 @@ public class PlayerAttack : MonoBehaviour {
 
 	[SerializeField] int collectedEnemyType;
 	[SerializeField] int timer;
-
 	[SerializeField] GameObject projectileBP;
 	[SerializeField] GameObject spoonMode;
 
@@ -92,6 +91,7 @@ public class PlayerAttack : MonoBehaviour {
 			playerState = STATE.OPEN;
 			break;
 		case STATE.INVINCIBLE:
+			Score.Instance.increaseScore ();
 			Destroy(enemy);
 			break;
 		}

@@ -10,6 +10,17 @@ public class Score : MonoBehaviour
     
     public Text scoreText;
 
+	static Score _instance;
+	public static Score Instance
+	{
+		get
+		{
+			if (_instance == null)
+				_instance = GameObject.FindObjectOfType<Score> ();
+			return _instance;
+		}
+	}
+
     // Use this for initialization
     private void Awake()
     {

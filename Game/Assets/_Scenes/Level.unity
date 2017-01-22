@@ -969,19 +969,6 @@ BoxCollider:
 GameObject:
   m_PrefabParentObject: {fileID: 166282, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_PrefabInternal: {fileID: 1506840181}
---- !u!114 &1220321529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1220321526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73c48fec51338453cb4aa37fc52dedc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  staggerAmount: 0.1
-  staggerDelay: 0.01
 --- !u!1 &1337829552 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 134256, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
@@ -1001,22 +988,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &1337829557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1337829552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e65dc0e8a885f4c8b915d1172ffc0fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeDoorAttackTime: 1
-  collectedEnemyType: 0
-  timer: 0
-  projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
-  spoonMode: {fileID: 0}
 --- !u!114 &1337829558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1032,18 +1003,6 @@ MonoBehaviour:
   InvincibilityAfterRespawn: 0
   invincibility: 0
   lives: 0
---- !u!65 &1337829560
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1337829552}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1353387017 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 155716, guid: f0c6c0a1639bb2245b14bdabc10623eb, type: 2}
@@ -1225,9 +1184,33 @@ Prefab:
       propertyPath: spoonMode
       value: 
       objectReference: {fileID: 1220321526}
+    - target: {fileID: 11459428, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11439422, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405900, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6547200, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573078, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
     - {fileID: 6522540, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+    - {fileID: 11439422, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+    - {fileID: 11459428, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+    - {fileID: 11405900, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+    - {fileID: 6547200, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1573521350 stripped

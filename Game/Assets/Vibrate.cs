@@ -9,16 +9,19 @@ public class Vibrate : MonoBehaviour {
 	float staggerDelay;
 	float staggerCounter;
 
-	void Start()
+	void OnEnable()
 	{
+		staggerCounter = staggerDelay;
 		staggerCounter = 0.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		staggerCounter -= Time.deltaTime;
-		if (staggerCounter > 0.0f)
+		if (staggerCounter > 0.0f) {
+			Debug.Log ("NSDFKFEDFEFVJ!");
 			return;
+		}
 		staggerCounter = staggerDelay;
 		transform.parent.gameObject.transform.position = new Vector3 (
 			transform.parent.gameObject.transform.position.x,

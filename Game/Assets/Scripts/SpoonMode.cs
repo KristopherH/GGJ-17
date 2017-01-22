@@ -8,8 +8,7 @@ public class SpoonMode : MonoBehaviour {
 
 	PlayerAttack pa;
 
-	// Use this for initialization
-	void Start () 
+	void OnEnable()
 	{
 		pa = GetComponentInParent<PlayerAttack> ();
 		timer = modeLength;

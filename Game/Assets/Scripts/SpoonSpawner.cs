@@ -59,7 +59,7 @@ public class SpoonSpawner : MonoBehaviour {
 	{
 		foreach (GameObject spoon in spoons) 
 		{
-			GameObject.DestroyImmediate (spoon);
+			GameObject.Destroy (spoon);
 		}
 	}
 }
