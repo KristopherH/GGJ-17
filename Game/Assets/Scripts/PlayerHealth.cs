@@ -31,4 +31,8 @@ public class PlayerHealth : MonoBehaviour {
 		transform.position = respawnPoint.transform.position;
 		invincibility = InvincibilityAfterRespawn;
 	}
+
+	public void Kill(){
+		lives = 0;
+	}
 }

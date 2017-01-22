@@ -132,4 +132,12 @@ public class PlayerAttack : MonoBehaviour {
 			GetComponent<Player_Controller>().FaceUp();
 		}
 	}
+
+	public void SetInvincible(bool invin){
+		if (invin){
+			playerState = STATE.INVINCIBLE;
+		} else {
+			playerState = STATE.OPEN;
+		}
+	}
 }
