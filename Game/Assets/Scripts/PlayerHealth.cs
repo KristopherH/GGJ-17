@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	IEnumerator GameOver() {
+		Instantiate(FXController.Instance.playerDeath,gameObject.transform.position,gameObject.transform.rotation);
 		yield return new WaitForSeconds(2);
 		SceneManager.LoadSceneAsync(3);
 		SoundsController.Instance.Play("Boo");
