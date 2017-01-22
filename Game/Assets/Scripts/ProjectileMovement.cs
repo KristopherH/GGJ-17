@@ -20,6 +20,7 @@ public class ProjectileMovement : MonoBehaviour {
 	void OnTriggerEnter(Collider other){
 		if (other.gameObject.tag == "Enemy"){
 			Destroy(other.gameObject);
+			Score.Instance.increaseScore(2);
 			life--;
 			if (life <= 0){
 				Destroy(this.gameObject);
