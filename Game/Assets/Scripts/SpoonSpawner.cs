@@ -34,13 +34,11 @@ public class SpoonSpawner : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.M))
-			RegisterCook();
+
 	}
 
 	public void RegisterCook()
 	{
-		Debug.Log ("COOK");
 		cookCountDown--;
 		if (cookCountDown <= 0)
 			Spawn ();
@@ -48,7 +46,6 @@ public class SpoonSpawner : MonoBehaviour {
 
 	void Spawn()
 	{
-		Debug.Log ("SPAWN");
 		startCookDelay = startCookDelay == maxCookDelay ? maxCookDelay : startCookDelay + 1;
 		cookCountDown = startCookDelay;
 		GameObject spoon = Instantiate (spoonPrefab, gameObject.transform.position, gameObject.transform.rotation) as GameObject;  
