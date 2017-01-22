@@ -991,21 +991,6 @@ MonoBehaviour:
   InvincibilityAfterRespawn: 0
   invincibility: 0
   lives: 0
---- !u!114 &1337829559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1337829552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f614f3463e3417da7c8bf699298e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalTimePlayedText: {fileID: 0}
-  cookingTimerText: {fileID: 0}
-  cTimer: 0
-  enemyType: 0
 --- !u!65 &1337829560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1179,6 +1164,14 @@ Prefab:
       propertyPath: modeLength
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 11467376, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: projectileBP
+      value: 
+      objectReference: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
+    - target: {fileID: 11405900, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: respawnPoint
+      value: 
+      objectReference: {fileID: 1675055815}
     m_RemovedComponents:
     - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
     - {fileID: 6522540, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
