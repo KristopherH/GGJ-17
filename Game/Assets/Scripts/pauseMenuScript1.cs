@@ -3,20 +3,27 @@ using System.Collections;
 
 public class pauseMenuScript1 : MonoBehaviour
 {
-
     public GameObject PauseUI;
-    public GameObject enemyStats;
+    public GameObject enemyStat;
+    public GameObject player;
 
     public bool paused = false;
 
     void Start()
     {
         PauseUI.SetActive(false);
-        enemyStats.SetActive(false);
+        enemyStat.SetActive(false);
+        player.SetActive(true);
+
     }
 
     void Update()
     {
+        if(Input.GetButtonDown("A/X"))
+        {
+            
+        }
+
         if (Input.GetButtonDown("Pause"))
         {
             paused = !paused;
@@ -25,14 +32,16 @@ public class pauseMenuScript1 : MonoBehaviour
         if (paused)
         {
             PauseUI.SetActive(true);
-            enemyStats.SetActive(true);
-            Time.timeScale = 0;
+            enemyStat.SetActive(true);
+            player.SetActive(false);
+            Time.timeScale = 1;
         }
 
         if (!paused)
         {
             PauseUI.SetActive(false);
-            enemyStats.SetActive(false);
+            enemyStat.SetActive(false);
+            player.SetActive(true);
             Time.timeScale = 1;
         }
     }
