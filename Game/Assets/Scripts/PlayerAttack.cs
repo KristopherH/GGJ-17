@@ -109,6 +109,9 @@ public class PlayerAttack : MonoBehaviour {
 		case Player_Controller.player_state.FACING_RIGHT:
 			projectile.GetComponent<ProjectileMovement>().direction = new Vector3(10, 0, 0);
 			break;
+		default:
+			Destroy(projectile);
+			break;
 		}
 	}
 
