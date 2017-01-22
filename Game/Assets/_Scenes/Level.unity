@@ -238,7 +238,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6518434, guid: a3e5ee5282c584ea7a7d40934b94c19a, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11474246, guid: a3e5ee5282c584ea7a7d40934b94c19a, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1337829552}
+    m_RemovedComponents:
+    - {fileID: 6518434, guid: a3e5ee5282c584ea7a7d40934b94c19a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a3e5ee5282c584ea7a7d40934b94c19a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &231690508 stripped
@@ -762,6 +771,46 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1337829552}
+    - target: {fileID: 8269810, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275472, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262856, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8294210, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273038, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8260002, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228508, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265606, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226216, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8238292, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18e7bacf3055d6f498674a615c5fb4c0, type: 2}
   m_IsPrefabParent: 0
@@ -973,9 +1022,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDoorAttackTime: 1
+  playerState: 0
   collectedEnemyType: 0
-  timer: 0
+  invincibilityTimer: 0
   projectileBP: {fileID: 161238, guid: c2d4924e7bc5c40ac9af4e6184f0193c, type: 2}
+  spoonMode: {fileID: 0}
+  scored: 1
 --- !u!114 &1337829558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,21 +1043,6 @@ MonoBehaviour:
   InvincibilityAfterRespawn: 0
   invincibility: 0
   lives: 0
---- !u!114 &1337829559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1337829552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99f614f3463e3417da7c8bf699298e28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalTimePlayedText: {fileID: 0}
-  cookingTimerText: {fileID: 0}
-  cTimer: 0
-  enemyType: 0
 --- !u!65 &1337829560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1014,7 +1051,7 @@ BoxCollider:
   m_GameObject: {fileID: 1337829552}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -1178,6 +1215,14 @@ Prefab:
     - target: {fileID: 11433364, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
       propertyPath: modeLength
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11467376, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: spoonMode
+      value: 
+      objectReference: {fileID: 1220321526}
+    - target: {fileID: 6573078, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6554778, guid: cddf8fcd1a08a2344900fbe42fdfd0db, type: 2}
