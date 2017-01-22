@@ -23,19 +23,31 @@ public class MainMenu : MonoBehaviour {
             switch (randomNum)
             {
                 case 0:
-                    changeText.text = "RUM IS GOOD";
+                    changeText.text = "Go Shawty \n It's sherbert day";
                     break;
                 case 1:
-                    changeText.text = "FEED ME";
+                    changeText.text = "Feed Me";
                     break;
                 case 2:
-                    changeText.text = "GET IN ME";
+                    changeText.text = "Wu Tang Flan";
                     break;
                 case 3:
                     changeText.text = "MEOW";
                     break;
                 case 4:
                     changeText.text = "!Cake";
+                    break;
+                case 5:
+                    changeText.text = "Blurred Limes";
+                    break;
+                case 6:
+                    changeText.text = "Send Foods";
+                    break;
+                case 7:
+                    changeText.text = "Robert Brownie Jr.";
+                    break;
+                case 8:
+                    changeText.text = "B*tch Peas";
                     break;
             }
             
